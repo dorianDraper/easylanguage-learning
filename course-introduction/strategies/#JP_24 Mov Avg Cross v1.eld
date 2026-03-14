@@ -30,6 +30,7 @@ Begin
 	BuyToCover Next Bar at Market;
 End; 
 
+// Tendencial
 {	👉 Entrada por momentum cruce de medias. Buscamos movimientos rápidos y	eficientes, evitar quedarse atrapado en trades laterales.
 	🔹 Entrada larga (Buy)
 		- Cuando la media rápida cruza hacia arriba la lenta.

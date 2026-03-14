@@ -37,14 +37,13 @@ End;
 {💡 Importante:
 		UpCount siempre será positivo
 		DownCount siempre será negativo
-	Esto es intencional y muy elegante desde el punto de vista visual.
+	    Esto es intencional y muy elegante desde el punto de vista visual.
 	
 	Caso 1️: Price > Price[1]
 		El precio sube respecto a la barra anterior
 		👉 la racha alcista continúa → UpCount + 1
 	Caso 2: Price = Price[1] pero ya había racha
-		El precio no sube ni baja
-		Pero no rompe la racha alcista
+		El precio no sube ni baja, pero no rompe la racha alcista
 		👉 se sigue contando como racha
 	Caso contrario:
 		El precio baja
@@ -55,6 +54,5 @@ End;
 	
 	Este indicador nos dice en una sola celda:
 	“¿Cuántas barras seguidas lleva subiendo o bajando este activo?”
-	Ideal para ver fuerza o agotamiento del movimiento
-	Basado en estructura de precios, no en indicadores clásicos
+	Ideal para ver fuerza o agotamiento del movimiento. Basado en estructura de precios, no en indicadores clásicos
 }
