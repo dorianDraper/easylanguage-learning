@@ -1,6 +1,6 @@
 {Esta estrategia entra en la dirección de la tendencia determinada por dos medias móviles exponenciales. 
 El objetivo de beneficios y los niveles de stop loss están a n puntos del precio de entrada, establecidos mediante inputs.
-La estrategia introduce varios concepto como cooldown tras salida, dependencia del trade previo, uso explícito de EntryPrice, 
+La estrategia introduce varios conceptos como cooldown tras salida, dependencia del trade previo, uso explícito de EntryPrice, 
 y gestión simétrica long/short.}
 
 Inputs:
@@ -59,8 +59,8 @@ Begin
 	BuyToCover ("SL_SX") Next Bar at EntryPrice + StopLossPoints Stop;
 End;
 
-// Tendencial
-{🧩 Tipo de estrategia
+// Tendencial trend continuation with directional alternation
+{🧩Tipo de estrategia
 	📈 Trend-following
 	⚡ Basada en EMAs
 	⏱️ Con cooldown tras salida
@@ -69,12 +69,16 @@ End;
 
 👉No es un simple EMA cross, es un trend alternator con memoria del último trade.
 
-🧠 Resumen mental (muy importante)
+🧠Resumen mental (muy importante)
 	“Sigo la tendencia marcada por las EMAs. No reentro inmediatamente tras salir.
 	Solo vuelvo a entrar cuando el mercado ha respirado y lo hago en la dirección opuesta al último trade.
 	Cada trade tiene un riesgo y un objetivo fijos desde el inicio.”
 
-🧩 Regla de oro para salidas:
+🚀Setup de entrada
+	📈 Largo: EMAs alineadas al alza + último trade fue corto o es el primer trade
+	📉 Corto: EMAs alineadas a la baja + último trade fue largo o es el primer trade
+
+🧩Regla de oro para salidas:
 	🔹Si el precio de salida está “mejor” que el precio actual → LIMIT
 	🔹Si el precio de salida está “peor” que el precio actual → STOP
 
