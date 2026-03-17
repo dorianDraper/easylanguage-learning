@@ -1,6 +1,7 @@
 {-------------------------------------------------------------------
  EMA Trend Reversal-Cycle Strategy v3
- Long/Short Signal / Execution Architecture
+
+ Adding Long/Short Signal / Execution Architecture
 -------------------------------------------------------------------}
 
 Inputs:
