@@ -27,12 +27,10 @@ Vars:
 	PreviousPosition(0),
 
 	{ Timing }
-
 	CooldownPassed(false),
 	FirstTrade(false),
 
 	{ Signals }
-
 	LongSignal(false),
 	ShortSignal(false);
 
@@ -40,7 +38,6 @@ Vars:
 {--------------------------------------------------
  Indicator calculation
 --------------------------------------------------}
-
 FastEMA = XAverage(FastEMAPrice, FastEMALength);
 SlowEMA = XAverage(SlowEMAPrice, SlowEMALength);
 
@@ -48,7 +45,6 @@ SlowEMA = XAverage(SlowEMAPrice, SlowEMALength);
 {--------------------------------------------------
  Trend detection
 --------------------------------------------------}
-
 BullTrend = FastEMA > SlowEMA;
 BearTrend = FastEMA < SlowEMA;
 
@@ -56,7 +52,6 @@ BearTrend = FastEMA < SlowEMA;
 {--------------------------------------------------
  Position state
 --------------------------------------------------}
-
 IsFlat = MarketPosition = 0;
 IsLong = MarketPosition = 1;
 IsShort = MarketPosition = -1;
@@ -67,7 +62,6 @@ PreviousPosition = MarketPosition(1);
 {--------------------------------------------------
  Trade timing conditions
 --------------------------------------------------}
-
 CooldownPassed = BarsSinceExit(1) >= CooldownBars;
 FirstTrade = TotalTrades = 0;
 
@@ -75,7 +69,6 @@ FirstTrade = TotalTrades = 0;
 {--------------------------------------------------
  SIGNAL ENGINE
 --------------------------------------------------}
-
 LongSignal =
 	IsFlat and
 	BullTrend and
@@ -91,7 +84,6 @@ ShortSignal =
 {--------------------------------------------------
  EXECUTION ENGINE
 --------------------------------------------------}
-
 If LongSignal Then
 	Buy ("EMA_Trend_LE") Next Bar at Market;
 
@@ -103,7 +95,6 @@ If ShortSignal Then
 {--------------------------------------------------
  EXIT ENGINE
 --------------------------------------------------}
-
 If IsLong Then
 Begin
 	Sell ("TP_LX") Next Bar at EntryPrice + ProfitTargetPoints Limit;
