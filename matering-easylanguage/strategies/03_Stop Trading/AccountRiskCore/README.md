@@ -65,21 +65,21 @@ We can easily add:
 Without touching System or Indicators.
 
 #### Clean separation of layers
-Core Risk Logic → function
-Execution → system
-Monitoring → indicators
+Core Risk Logic → function</br>
+Execution → system</br>
+Monitoring → indicators</br>
 
 👉 This is professional architecture.
 
 
 ## ✅ Conclusion
 
-Centralizing logic in *AccountRiskCore()*:
-✔ Eliminates duplication
-✔ Improves consistency
-✔ Simplifies maintenance
-✔ Enables scalability
-✔ Brings your code closer to professional standards
+Centralizing logic in *AccountRiskCore()*:</br>
+✔ Eliminates duplication</br>
+✔ Improves consistency</br>
+✔ Simplifies maintenance</br>
+✔ Enables scalability</br>
+✔ Brings your code closer to professional standards</br>
 
 ## Potential Nex Steps
 We can evolve this into a ***Risk State Object***
