@@ -3,6 +3,8 @@ The idea is to have the *04 Stop Trading* system, *AccountEquityAlert* and *Acco
 
 The key idea is to have a **Single Source of Truth for risk logic**.
 
+We rename *04 Stop Trading* to *AccountEquityStopTrading*.
+
 ## Current Problem
 Right now, we have the same logic replicated across:
 * Function (AccountEquityStop_JP)
