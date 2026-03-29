@@ -1,18 +1,7 @@
 {-------------------------------------------------------------------
- EMA Trend Reversal-Cycle Strategy v2
+ EMA Trend Alternation Strategy v3
 
- Description:
- Trend-following strategy based on a fast and slow exponential
- moving average.
-
- Entries occur only in the direction of the current trend and
- only after the previous trade was in the opposite direction.
-
- Additional controls:
-    - Cooldown period after exiting a trade
-    - Symmetric long/short trade management
-    - Fixed profit target and stop loss based on EntryPrice
-
+ Adding Long/Short Signal / Execution Architecture
 -------------------------------------------------------------------}
 
 Inputs:
@@ -23,42 +12,46 @@ Inputs:
 	StopLossPoints(.5);
 
 Vars:
+	{ Indicators }
 	FastEMA(0),
 	SlowEMA(0),
 
+	{ Trend state }
 	BullTrend(false),
 	BearTrend(false),
 
+	{ Position state }
 	IsFlat(false),
 	IsLong(false),
 	IsShort(false),
-
 	PreviousPosition(0),
 
+	{ Timing }
 	CooldownPassed(false),
-	FirstTrade(false);
+	FirstTrade(false),
+
+	{ Signals }
+	LongSignal(false),
+	ShortSignal(false);
 
 
 {--------------------------------------------------
- Calculate trend indicators
+ Indicator calculation
 --------------------------------------------------}
-
 FastEMA = XAverage(FastEMAPrice, FastEMALength);
 SlowEMA = XAverage(SlowEMAPrice, SlowEMALength);
 
 
 {--------------------------------------------------
- Determine trend state
+ Trend detection
 --------------------------------------------------}
-
 BullTrend = FastEMA > SlowEMA;
 BearTrend = FastEMA < SlowEMA;
 
 
 {--------------------------------------------------
- Determine current position state
+ Position state
 --------------------------------------------------}
-
 IsFlat = MarketPosition = 0;
 IsLong = MarketPosition = 1;
 IsShort = MarketPosition = -1;
@@ -69,66 +62,48 @@ PreviousPosition = MarketPosition(1);
 {--------------------------------------------------
  Trade timing conditions
 --------------------------------------------------}
-
 CooldownPassed = BarsSinceExit(1) >= CooldownBars;
 FirstTrade = TotalTrades = 0;
 
 
 {--------------------------------------------------
- Entry logic
+ SIGNAL ENGINE
 --------------------------------------------------}
+LongSignal =
+	IsFlat and
+	BullTrend and
+	(FirstTrade or (CooldownPassed and PreviousPosition = -1));
 
-If IsFlat Then
-Begin
 
-	{ Long entry:
-	  - Uptrend confirmed
-	  - Either first trade or previous trade was short
-	  - Cooldown period satisfied }
-
-	If (FirstTrade or (CooldownPassed and PreviousPosition = -1))
-		and BullTrend Then
-		 Buy ("EMA_Trend_LE") Next Bar at Market;
-
-	{ Short entry:
-	  - Downtrend confirmed
-	  - Either first trade or previous trade was long
-	  - Cooldown period satisfied }
-
-	If (FirstTrade or (CooldownPassed and PreviousPosition = 1))
-		and BearTrend Then
-		 SellShort ("EMA_Trend_SE") Next Bar at Market;
-
-End;
+ShortSignal =
+	IsFlat and
+	BearTrend and
+	(FirstTrade or (CooldownPassed and PreviousPosition = 1));
 
 
 {--------------------------------------------------
- Exit logic
+ EXECUTION ENGINE
 --------------------------------------------------}
+If LongSignal Then
+	Buy ("EMA_Trend_LE") Next Bar at Market;
 
+
+If ShortSignal Then
+	SellShort ("EMA_Trend_SE") Next Bar at Market;
+
+
+{--------------------------------------------------
+ EXIT ENGINE
+--------------------------------------------------}
 If IsLong Then
 Begin
-
-	{ Profit target }
-
 	Sell ("TP_LX") Next Bar at EntryPrice + ProfitTargetPoints Limit;
-
-	{ Stop loss }
-
 	Sell ("SL_LX") Next Bar at EntryPrice - StopLossPoints Stop;
-
 End;
 
 
 If IsShort Then
 Begin
-
-	{ Profit target }
-
 	BuyToCover ("TP_SX") Next Bar at EntryPrice - ProfitTargetPoints Limit;
-
-	{ Stop loss }
-
 	BuyToCover ("SL_SX") Next Bar at EntryPrice + StopLossPoints Stop;
-
 End;

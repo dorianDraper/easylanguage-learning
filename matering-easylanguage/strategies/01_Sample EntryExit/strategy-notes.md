@@ -1,9 +1,8 @@
 ## Notes
 The default name of the strategy in the course is 'Sample EntryExit'. We consider more appropiate, descriptive name and so we rename it as:
 ```
-EMA Trend Reversal-Cycle' since this is a descriptive name
+EMA Trend Alternation' since this is a descriptive name
 ```
-
 Each version incorporates improvements.
 
 ## Strategy Description
