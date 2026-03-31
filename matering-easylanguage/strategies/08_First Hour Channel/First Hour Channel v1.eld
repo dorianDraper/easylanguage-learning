@@ -1,4 +1,6 @@
-{Versión 1 según manual y vídeo explicativo}
+{-------------------------------------------------------------------
+Versión 1 según manual y vídeo explicativo
+-------------------------------------------------------------------}
 
 [Intrabarordergeneration = TRUE] //Queremos que los límites ejecuten dentro de barra
 

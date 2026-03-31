@@ -1,4 +1,6 @@
-{Segunda versión con el código refactorizado, hay que someter a revisión.}
+{-------------------------------------------------------------------
+Segunda versión con el código refactorizado, hay que someter a revisión.
+-------------------------------------------------------------------}
 
 [IntraBarOrderGeneration = TRUE]
 
