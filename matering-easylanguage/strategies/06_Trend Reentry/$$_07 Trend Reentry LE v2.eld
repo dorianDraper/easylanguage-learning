@@ -1,4 +1,6 @@
-{Segunda versión con mejoras de semántica, lógica y separación de estados}
+{-------------------------------------------------------------------
+Segunda versión con mejoras de semántica, lógica y separación de estados
+-------------------------------------------------------------------}
 
 Inputs:
 	FastLen(13),
