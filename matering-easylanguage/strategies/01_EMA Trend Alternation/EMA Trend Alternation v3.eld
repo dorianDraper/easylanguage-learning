@@ -2,6 +2,10 @@
  EMA Trend Alternation Strategy v3
 
  Adding Long/Short Signal / Execution Architecture
+ Structure improvements:
+	- Added LongSignal and ShortSignal variables for clearer logic separation
+	- Cleaned up entry conditions for better readability
+	- Maintained all previous improvements from v2
 -------------------------------------------------------------------}
 
 Inputs:
@@ -41,13 +45,11 @@ Vars:
 FastEMA = XAverage(FastEMAPrice, FastEMALength);
 SlowEMA = XAverage(SlowEMAPrice, SlowEMALength);
 
-
 {--------------------------------------------------
  Trend detection
 --------------------------------------------------}
 BullTrend = FastEMA > SlowEMA;
 BearTrend = FastEMA < SlowEMA;
-
 
 {--------------------------------------------------
  Position state
@@ -58,13 +60,11 @@ IsShort = MarketPosition = -1;
 
 PreviousPosition = MarketPosition(1);
 
-
 {--------------------------------------------------
  Trade timing conditions
 --------------------------------------------------}
 CooldownPassed = BarsSinceExit(1) >= CooldownBars;
 FirstTrade = TotalTrades = 0;
-
 
 {--------------------------------------------------
  SIGNAL ENGINE
@@ -80,7 +80,6 @@ ShortSignal =
 	BearTrend and
 	(FirstTrade or (CooldownPassed and PreviousPosition = 1));
 
-
 {--------------------------------------------------
  EXECUTION ENGINE
 --------------------------------------------------}
@@ -91,7 +90,6 @@ If LongSignal Then
 If ShortSignal Then
 	SellShort ("EMA_Trend_SE") Next Bar at Market;
 
-
 {--------------------------------------------------
  EXIT ENGINE
 --------------------------------------------------}
@@ -100,7 +98,6 @@ Begin
 	Sell ("TP_LX") Next Bar at EntryPrice + ProfitTargetPoints Limit;
 	Sell ("SL_LX") Next Bar at EntryPrice - StopLossPoints Stop;
 End;
-
 
 If IsShort Then
 Begin
