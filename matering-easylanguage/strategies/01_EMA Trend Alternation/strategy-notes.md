@@ -1,6 +1,6 @@
 ## Strategy Description
 
-The **EMA Trend Alternation** is a trend-following strategy that forces directional alternation—the algorithm automatically switches between long and short trades, preventing consecutive trades in the same direction. This enforced alternation creates a balanced trading rhythm that reduces directional bias and forces systematic position rotation.
+The **EMA Trend Alternation** is a trend-following strategy that forces directional alternation—the algorithm automatically switches between long and short trades, preventing consecutive trades in the same direction. This enforced alternation creates a balanced trading rhythm that **reduces directional bias and forces systematic position rotation**.
 
 ### Core Mechanics
 
@@ -32,7 +32,7 @@ The trend state is determined simply:
    - First trade of the strategy (no prior positions), OR
    - A cooldown period has elapsed since the last exit, AND the previous position was a long
 
-This logic creates a mandatory alternation pattern: after a long trade exits, the next long cannot enter until a short has been taken. Same applies in reverse.
+This logic creates a **mandatory alternation pattern**: after a long trade exits, the next long cannot enter until a short has been taken. Same applies in reverse.
 
 **Entry Execution:** When either signal is true, a market order enters on the next bar:
 
