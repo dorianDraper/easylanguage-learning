@@ -129,3 +129,5 @@ The strategy embodies a "forced balance" philosophy. Rather than chasing a singl
 - **Alternation as Feature:** The forced alternation is intentional, not a bug; it trades the opposite direction on purpose
 
 ### Notes
+* Real hedge: Does the alternation benefit or harm? 
+* Targets and stops levels: base strategy params are tight, we have to test
