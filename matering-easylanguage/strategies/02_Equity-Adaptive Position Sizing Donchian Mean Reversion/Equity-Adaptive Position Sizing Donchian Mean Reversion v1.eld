@@ -43,7 +43,3 @@ If High > Highest(High, 21)[1] Then
 {Gestión del riesgo}
 SetStopLoss(ProfitStopLoss);
 SetProfitTarget(ProfitStopLoss);
-
-
-{ 
-}
