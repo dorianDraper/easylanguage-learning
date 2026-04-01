@@ -1,6 +1,5 @@
 {-------------------------------------------------------------------
- v2.0 - Updated version of the AccountEquityStop function with improved structure and comments.
- AccountEquityStop Function
+ v2.0 - Updated version of the AccountEquityStop_JP function with improved structure and comments.
 
  Description:
  Evaluates whether daily account P&L is within allowed limits.

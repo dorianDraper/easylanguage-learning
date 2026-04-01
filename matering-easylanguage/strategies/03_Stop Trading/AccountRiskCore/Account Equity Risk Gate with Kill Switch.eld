@@ -1,3 +1,8 @@
+{-------------------------------------------------------------------
+ Account Equity Risk Gate with Kill Switch 
+
+-------------------------------------------------------------------}
+
 Inputs:
 	MaxDailyLoss(5000),
 	MaxDailyProfit(5000);
@@ -12,13 +17,11 @@ Vars:
 
 	RiskTriggered(false);
 
-
 {--------------------------------------------------
  State
 --------------------------------------------------}
 IsLong  = MarketPosition = 1;
 IsShort = MarketPosition = -1;
-
 
 {--------------------------------------------------
  Risk evaluation
@@ -43,7 +46,6 @@ End;
 If RiskTriggered Then
 	AccountTradingAllowed = False;
 
-
 {--------------------------------------------------
  Kill switch
 --------------------------------------------------}
@@ -55,7 +57,6 @@ Begin
 	If IsShort Then
 		BuyToCover ("AcctStop_SX") This Bar on Close;
 End;
-
 
 {--------------------------------------------------
  Strategy layer

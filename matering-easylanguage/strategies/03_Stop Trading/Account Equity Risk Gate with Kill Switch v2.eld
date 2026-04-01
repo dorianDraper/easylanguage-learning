@@ -1,10 +1,10 @@
 {-------------------------------------------------------------------
- Version: 2.0
- Account Risk Gate Controller
-
- Description:
- Controls whether trading is allowed based on daily account P&L.
- Acts as a wrapper around any strategy.
+ Account Equity Risk Gate with Kill Switch v2.0
+ 
+ Improvements over v1.0:
+ 	- Added a latch mechanism to ensure that once the risk gate is triggered, it remains off for the rest of the day.
+ 	- Cleaned up logic for better readability and reliability.
+ 	- Ensures that all open positions are closed immediately when the risk gate is triggered.
 
 -------------------------------------------------------------------}
 
@@ -19,8 +19,7 @@ Vars:
 	AccountTradingAllowed(true),
 	DailyNetPL(0),
 
-	RiskTriggered(false);   // latch
-
+	RiskTriggered(false);   // latch to keep track of whether risk gate has been triggered during the day
 
 {--------------------------------------------------
  Position state
@@ -74,12 +73,3 @@ If AccountTradingAllowed Then
 Begin
 	// Strategy logic here
 End;
-
-{
-🧠 This is an account-level risk gate controller that can be used as a wrapper around
-any trading strategy. It evaluates the daily P&L of the account in real-time and disables
-all trading activity if the P&L exceeds predefined loss or profit thresholds. Once triggered,
-the risk gate remains latched off for the rest of the day, ensuring that no further trades are
-executed. This is a powerful tool for protecting capital and enforcing risk management rules at the account
-level.
-}

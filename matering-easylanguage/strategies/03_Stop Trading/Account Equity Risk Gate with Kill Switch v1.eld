@@ -1,3 +1,12 @@
+{-------------------------------------------------------------------
+Account Equity Risk Gate with Kill Switch v1.0
+ 
+ Description:
+ 	- Controls whether trading is allowed based on daily account P&L.
+ 	- Acts as a wrapper around any strategy.
+
+-------------------------------------------------------------------}
+
 Inputs:
     // Límites de pérdida y ganancia diaria
 	MaxDailyLoss(5000),
@@ -47,16 +56,3 @@ If AccountTradingAllowed Then
 Begin
 	// Estrategia que queramos emplear
 End;
-
-{
-🧠Esta NO es una estrategia, es un control de permisos a nivel de cuenta.
-La estrategia real vive “dentro”. Si la cuenta no puede operar → nada más importa
-
-El código implementa un "account-level kill switch" que detiene toda la actividad de trading en la 
-cuenta si se alcanza un nivel de pérdida o ganancia diaria predefinido.
-
-Esta estrategia está relacionada con la función AccountEquityStop_JP, demuestra 
-su utilidad al evitar nuevas órdenes de entrada del sistema cuando se alcanza un 
-beneficio o pérdida sobre la cuenta. La estrategia también cierra cualquier posición
-existente a mercado una vez se alcanza el nivel de stop de la cuenta.
-}

@@ -1,9 +1,7 @@
 ## Centralizing Logic into a Single Reusable Function
-The idea is to have the *04 Stop Trading* system, *AccountEquityAlert* and *AccountEquityMonitor* indicators all use the same function so we eliminate duplication and guarantee consistency.
+The idea is to have the *Account Equity Risk Gate with Kill Switch* system, *AccountEquityAlert* and *AccountEquityMonitor* indicators all use the same function so we eliminate duplication and guarantee consistency.
 
 The key idea is to have a **Single Source of Truth for risk logic**.
-
-We rename *04 Stop Trading* to *AccountEquityStopTrading*.
 
 ## Current Problem
 Right now, we have the same logic replicated across:
