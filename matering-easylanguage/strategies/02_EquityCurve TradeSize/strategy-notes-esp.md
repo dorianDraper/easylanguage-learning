@@ -38,7 +38,7 @@ Canal Donchian clásico máximo/mínimo 21 barras anteriores, excluimos la actua
     🔹Vende en corto cuando el mercado hace un nuevo máximo</br>
 Las entradas son con tamaño dinámico pues no es fijo, esto es money management activo.</br>
 
-🛑 Setup salida</br>
+🛑 Setup salida</br>  
 Utilizamos gestión del riesgo mediante funciones predefinidas, se aplican automáticamente y están ligadas al EntryPrice, funcionan con MarketPosition, no hace falta escribir IsLong...el motor lo gestiona. Sale con:</br>
     🔹stop loss fijo</br>
     🔹profit target fijo</br>
