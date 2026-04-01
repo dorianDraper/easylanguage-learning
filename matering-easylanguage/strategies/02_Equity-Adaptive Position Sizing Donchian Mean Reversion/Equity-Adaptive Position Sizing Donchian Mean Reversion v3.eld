@@ -1,16 +1,12 @@
 {-------------------------------------------------------------------
-Tercera versión con comentarios añadidos, se mantiene la lógica pero se mejora la claridad y 
-preparación para futuras mejoras.
+Equity-Adaptive Position Sizing Donchian Mean Reversion Strategy v3
 
-Donchian Mean Reversion Strategy with Adaptive Position Sizing
+Structure and logic similar to v2, but with further refinements for clarity and maintainability.
 
-Description:
-Contrarian strategy that trades reversions after price reaches
-extremes defined by a Donchian channel.
-
-Position size dynamically adjusts based on strategy performance
-(NetProfit), increasing exposure during profitable periods and
-reducing risk during drawdowns.
+Key improvements:
+- More descriptive variable names for better readability.
+- Additional comments to explain each section of the code.
+- Consistent formatting for easier maintenance and future enhancements.
 
 -------------------------------------------------------------------}
 
@@ -23,7 +19,6 @@ Inputs:
 	DonchianLength(21);
 
 Vars:
-
 	{ Position sizing }
 	TradeSize(0),
 	TradeSizeAdjust(0),
@@ -38,7 +33,6 @@ Vars:
 
 	{ State }
 	IsFlat(false);
-
 
 {--------------------------------------------------
  Determine system state

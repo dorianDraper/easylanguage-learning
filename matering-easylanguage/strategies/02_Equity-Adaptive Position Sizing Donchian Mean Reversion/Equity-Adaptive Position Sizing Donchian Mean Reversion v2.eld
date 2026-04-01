@@ -1,6 +1,9 @@
-{ Segunda versión con ajustes, mantenemos lógica intaca pero separamos semántica 
-(riesgo vs sizing) y hacemos explícito el estado. Esto prepara el sistema para 
-futuras mejoras como trailing stops o filtros adicionales sin complicar la lógica actual. }
+{-------------------------------------------------------------------
+Equity-Adaptive Position Sizing Donchian Mean Reversion Strategy v2
+
+Structure and logic similar to v1, but with improved readability and additional comments for clarity.
+
+ -------------------------------------------------------------------}
 
 Inputs:
 	BaseTradeSize(1000),

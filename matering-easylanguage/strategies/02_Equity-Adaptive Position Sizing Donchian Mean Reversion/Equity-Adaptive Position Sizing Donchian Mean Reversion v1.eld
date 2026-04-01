@@ -8,6 +8,7 @@ with position sizing adjusted based on the strategy's equity performance.
 Additional controls:
     - Dynamic position sizing based on NetProfit
     - Fixed profit target and stop loss based on EntryPrice
+    
  -------------------------------------------------------------------}
 
 Inputs:
