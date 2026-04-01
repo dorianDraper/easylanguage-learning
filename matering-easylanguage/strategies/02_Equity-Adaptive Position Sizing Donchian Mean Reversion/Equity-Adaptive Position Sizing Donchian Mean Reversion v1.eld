@@ -1,8 +1,10 @@
 {-------------------------------------------------------------------
 Equity-Adaptive Position Sizing Donchian Mean Reversion Strategy v1
+
 Description:
 Mean reversion strategy based on Donchian channels. Entries occur when price makes a new high or low, 
 with position sizing adjusted based on the strategy's equity performance.
+
 Additional controls:
     - Dynamic position sizing based on NetProfit
     - Fixed profit target and stop loss based on EntryPrice
