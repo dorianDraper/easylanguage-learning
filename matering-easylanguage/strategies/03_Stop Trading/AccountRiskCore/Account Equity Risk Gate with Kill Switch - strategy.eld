@@ -1,5 +1,9 @@
 {-------------------------------------------------------------------
- Account Equity Risk Gate with Kill Switch 
+ Account Equity Risk Gate with Kill Switch v4.0
+
+ This strategy demonstrates how to use the AccountRiskCore function to implement an equity 
+ risk gate with a kill switch. The strategy evaluates the daily net profit/loss against 
+ specified limits and disables trading if those limits are breached.
 
 -------------------------------------------------------------------}
 
