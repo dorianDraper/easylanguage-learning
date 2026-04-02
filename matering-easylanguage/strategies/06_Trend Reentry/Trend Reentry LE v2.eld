@@ -1,5 +1,11 @@
 {-------------------------------------------------------------------
-Trend Reentry Version 2
+Trend Reentry v2
+
+Structure improvements:
+- Clearer state management with boolean flags (IsFlat, IsLong, CanReEnter)
+- More descriptive variable names (FastMA, SlowMA, ExtensionLen)
+- Added comments for clarity
+
 -------------------------------------------------------------------}
 
 Inputs:
