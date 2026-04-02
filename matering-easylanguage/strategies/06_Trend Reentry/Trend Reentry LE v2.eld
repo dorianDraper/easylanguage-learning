@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Segunda versión con mejoras de semántica, lógica y separación de estados
+Trend Reentry Version 2
 -------------------------------------------------------------------}
 
 Inputs:
@@ -65,24 +65,7 @@ If MarketPosition = 0 and CanReEnter
 	Buy ("ReEntryLE") Next Bar at Market;
 
 
-{🧠 Resumen mental / interpretación conceptual
-🔑 Entro cuando nace la tendencia
-🔑 Salgo cuando el movimiento se estira demasiado
-🔑 Si la tendencia sigue viva, vuelvo a entrar
-🔑 Solo dejo de re-entrar cuando la tendencia muere
-
-O dicho de forma muy clara:
-	No me caso con una sola entrada,
-	me caso con la tendencia mientras exista.
-	“la tendencia sigue viva → puedo volver a participar”
-
-🧩 Tipo de estrategia
-	📈 Trend-following (long only)
-	🔁 Re-entry logic
-	🧠 State-driven
-	❌ No martingala
-	❌ No piramidación
-
+{Diagrama de estados:
 ┌─────────┐
 │  FLAT   │
 └────┬────┘
