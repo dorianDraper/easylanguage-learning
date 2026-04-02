@@ -1,5 +1,11 @@
 {-------------------------------------------------------------------
-Segunda versión con el código refactorizado, hay que someter a revisión.
+First Hour Channel v2
+
+Structure improvements:
+- Better variable naming for clarity
+- Added daily reset logic to ensure one trade per side per day
+- Separated logic into clear sections with comments
+
 -------------------------------------------------------------------}
 
 [IntraBarOrderGeneration = TRUE]

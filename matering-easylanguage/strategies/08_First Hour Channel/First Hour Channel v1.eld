@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Versión 1 según manual y vídeo explicativo
+First Hour Channel v1
 -------------------------------------------------------------------}
 
 [Intrabarordergeneration = TRUE] //Queremos que los límites ejecuten dentro de barra
