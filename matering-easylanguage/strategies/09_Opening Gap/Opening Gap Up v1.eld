@@ -4,7 +4,7 @@ Gap Up v1
 Structure (symmetry with Gap Down v2):
 - State machine variable (IsShort) for better readability and maintainability.
 - Separated logic into clear sections (gap detection, entry setup, state machine, exit setup)
-- Added comments for clarity.
+- Added comments for clarity.  
 
 -------------------------------------------------------------------}
 
