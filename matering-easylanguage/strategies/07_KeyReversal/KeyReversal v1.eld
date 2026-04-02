@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Versión 1 según manual
+Key Reversal Version 1
 -------------------------------------------------------------------}
 
 Inputs:
@@ -57,13 +57,3 @@ Begin
 		Sell ("Ex2") Next Bar 100 Shares from Entry ("LE2") at  Market;
 End;	
 
-{🧠 Resumen mental (muy importante)
-🔑 El ShowMe detecta estructura
-🔑 La estrategia añade gestión del trade
-🔑 Scale-in solo:
-	una vez
-	con pérdida
-	con patrón aún válido
-	🔑 Cada entrada tiene su propio reloj
-	🔑 Esto ya es trading de nivel avanzado
-}

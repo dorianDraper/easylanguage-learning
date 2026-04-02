@@ -1,5 +1,11 @@
 {-------------------------------------------------------------------
-Versión 2 con mejoras de semántica y lógica
+Key Reversal Version 2
+
+Structure improvements:
+	- Added state machine for clearer trade management
+	- Separated key reversal detection from trade execution logic
+	- Added comments for better readability
+	- Maintained all previous improvements from v1
 -------------------------------------------------------------------}
 
 Inputs:
@@ -68,12 +74,3 @@ Begin
 	Sell ("ExitLE2") Next Bar 100 Shares from Entry ("LE2") at Market;
 	TradeState = 1;
 End;
-
-{
-🧠 Resumen mental final
-🔑 TradeState dice dónde estoy
-🔑 El Key Reversal dice si puedo actuar
-🔑 El scale-in tiene su propio reloj
-🔑 Cada entrada se gestiona por separado
-🔑 Los cambios de estado reflejan decisiones del trader, no del lenguaje
-}
