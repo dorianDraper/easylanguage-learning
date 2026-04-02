@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Key Reversal Version 2
+Key Reversal v2
 
 Structure improvements:
 	- Added state machine for clearer trade management
