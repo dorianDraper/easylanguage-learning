@@ -25,22 +25,3 @@ Begin
 		SetExitOnClose;
 End;
 
-{
-🔹Se trata de una estrategia que sale antes del final del día con independencia del
-intervalo de la barra. 
-🔹Referencia a la hora del ordenador. Permite backtest de la salida a fin del día.
-🔹Crear un input switch y activar el atributo 'IntraBarOrderGeneration'.
-
-Al automatizarse, esta estrategia cierra todas las posiciones, largas o cortas,
-n minutos antes de la hora de cierre del día actual. Con el fin de aproximar el 
-back-testing de esta salida, la estrategia cierra cada trade histórico al precio de
-cierre del día. Esta estrategia es de solo salida y para gráficos intradía.
-
-Time vs CurrenTime
-Time = hora de la barra (histórica o actual)
-CurrentTime = hora real del ordenador 
-
-Date vs CurrentDate
-Date = fecha de la barra
-CurrentDate = fecha real actual
-}
