@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-End-of-Day Exit version 1
+End-of-Day Exit v1
 -------------------------------------------------------------------}
 
 // Enable IntrabarOrderGeneration, ejecuta órdenes dentro de la barra, no espera al cierre de vela

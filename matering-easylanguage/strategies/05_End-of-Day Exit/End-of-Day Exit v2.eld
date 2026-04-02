@@ -1,5 +1,10 @@
 {-------------------------------------------------------------------
-End-of-Day Exit version 2
+End-of-Day Exit v2
+
+Structure improvements:
+- Renamed variables for clarity (e.g., IsEODWindow, IsRealTime)
+- Added comments for better understanding of each step
+
 -------------------------------------------------------------------}
 
 [IntraBarOrderGeneration = TRUE]
