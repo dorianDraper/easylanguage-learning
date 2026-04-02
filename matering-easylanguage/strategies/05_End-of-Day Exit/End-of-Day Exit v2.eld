@@ -1,7 +1,5 @@
 {-------------------------------------------------------------------
-Versión 2 con mejoras en semántica y lógica para mayor claridad, consistencia y adaptabilidad.
-Añadimos Vars para mejorar la legibilidad y mantenemos la funcionalidad original.
-También state machine para mayor claridad en la lógica de control de flujo. 
+End-of-Day Exit version 2
 -------------------------------------------------------------------}
 
 [IntraBarOrderGeneration = TRUE]
