@@ -1,53 +1,181 @@
 ## Strategy Description
 
-The **Account Equity Risk Gate with Kill Switch** is a sophisticated account-level risk management system that automatically halts all trading activity when daily profit or loss limits are exceeded. Rather than protecting individual positions, this system protects the entire account by enforcing strict daily P&L boundaries. It acts as a programmable circuit breaker that triggers when market volatility or adverse trading results threaten the account.
+The **Account Equity Risk Gate with Kill Switch** is a four-component account-level risk management system that monitors daily profit/loss and automatically stops trading when predefined limits are breached. The system evaluates account equity in real-time, provides visual monitoring and alerts, and mechanically closes all open positions when risk thresholds are exceeded.
 
-### Core Architecture
+### Component 1: AccountEquityStop_JP - Function v2
 
-The system consists of four integrated components that work together to create a unified risk management framework:
+**Purpose:** Core risk evaluation function that measures daily P&L and determines trading permission.
 
-**1. AccountRiskCore Function (Single Source of Truth)**
+**Operation:**
 
-This centralized function eliminates logic duplication by consolidating all risk evaluation into one reusable component:
+1. **Retrieves Start-of-Day Equity:** `BeginDayEquity = GetBDAccountNetWorth(AccountID)`
+2. **Retrieves Real-Time Equity:** `CurrentEquity = GetRTAccountNetWorth(AccountID)`
+3. **Calculates Daily P&L:** `ComputedDailyPL = CurrentEquity - BeginDayEquity`
+4. **Evaluates Limits:**
+   - Trading allowed if: `ComputedDailyPL > -MaxDailyLoss` AND `ComputedDailyPL < MaxDailyProfit`
+   - Trading blocked if either limit is violated
+5. **Returns Result:** `True` (trading allowed) or `False` (trading blocked)
 
-- **Input Retrieval:** Fetches the account's beginning-of-day equity using `GetBDAccountNetWorth(AccountID)`
-- **Real-Time Tracking:** Retrieves current account equity using `GetRTAccountNetWorth(AccountID)`
-- **Daily P&L Calculation:** Computes `DailyNetPL = CurrentEquity - BeginDayEquity`
-- **Limit Evaluation:** Checks if daily P&L falls within acceptable bounds:
-  - `DailyNetPL > -MaxDailyLoss` (loss limit not breached)
-  - `DailyNetPL < MaxDailyProfit` (profit limit not breached)
-- **Permission Return:** Returns `True` if both conditions are met (trading allowed) or `False` if either limit is violated
+**Outputs:**
 
-**2. Account Equity Risk Gate with Kill Switch v2 (Strategy Wrapper)**
+- Return value: Boolean (trading permission)
+- By reference: `oDailyNetPL` (current daily profit/loss amount)
 
-This is the execution layer that implements the kill switch mechanism:
+**Parameters:**
 
-- **Latch Mechanism:** Once the risk gate is triggered, it remains disabled for the rest of the trading day, preventing re-entry even if P&L recovers within limits
-- **Position Closure:** When triggered, all open positions are immediately closed:
-  - Long positions: Sell at market `This Bar on Close`
-  - Short positions: Buy to cover at market `This Bar on Close`
-- **Real-Time Check:** Evaluates `AccountTradingAllowed` on each real-time bar using `If LastBarOnChart`
-- **Safe Strategy Wrapper:** Any trading strategy can be placed inside the `If AccountTradingAllowed Then Begin... End;` block, ensuring the strategy only executes when risk gates are not breached
+- `MaxDailyLoss`: Maximum daily loss in dollars before halt (default: $5,000)
+- `MaxDailyProfit`: Maximum daily profit in dollars before halt (default: $5,000)
+- `AccountID`: Account identifier for equity retrieval
 
-**3. AccountEquityMonitor Indicator (Visual Display)**
+### Component 2: Account Equity Risk Gate with Kill Switch v2
 
-A real-time visualization tool that displays:
+**Purpose:** Execution layer that enforces trading restrictions and closes positions when risk gates trigger.
 
-- Current daily P&L
-- Maximum daily loss limit
-- Maximum daily profit limit
-- Visual indicators showing proximity to limits
+**Key Features:**
 
-Used for monitoring during live trading sessions.
+**Latch Mechanism:**
 
-**4. AccountEquityAlert Indicator (Immediate Notification)**
+- Once the risk gate is triggered, it remains **disabled for the rest of the trading day**
+- Prevents re-enablement even if P&L recovers within limits
+- Implemented via `RiskTriggered` flag that, once set to `True`, keeps `AccountTradingAllowed = False`
 
-A real-time alert system that:
+**Real-Time Check:**
 
-- Detects the exact moment daily limits are violated
-- Generates an immediate alert (visual, audible, or email)
-- Works only on real-time bars (`LastBarOnChart`)
-- Provides immediate warning before the kill switch executes
+- Evaluates risk status only on real-time bars: `If LastBarOnChart Then`
+- Calls `AccountEquityStop_JP()` function to determine trading permission
+
+**Kill Switch Execution:**
+When trading is no longer allowed:
+
+- Closes all long positions: `Sell ("AcctStop_LX") This Bar on Close`
+- Closes all short positions: `BuyToCover ("AcctStop_SX") This Bar on Close`
+- Executes on the same bar that triggers the limit breach
+
+**Strategy Container:**
+Any trading strategy can be placed inside:
+
+```
+If AccountTradingAllowed Then
+Begin
+    // Your strategy code here
+End
+```
+
+The strategy only executes when risk gates permit.
+
+**Parameters:**
+
+- `MaxDailyLoss`: Dollar loss threshold (default: $5,000)
+- `MaxDailyProfit`: Dollar profit threshold (default: $5,000)
+
+### Component 3: AccountEquityAlert - Indicator
+
+**Purpose:** Real-time alert system that notifies when daily P&L limits are breached.
+
+**Operation:**
+
+- Executes only on real-time bars: `If LastBarOnChart Then`
+- Calculates daily P&L: `DailyNetPL = CurrentAccountEquity - BDAccountEquity`
+- Evaluates limits: `WithinLimits = (DailyNetPL > -MaxDailyLoss) and (DailyNetPL < MaxDailyProfit)`
+- Triggers alert immediately if limits are breached: `If not WithinLimits Then Alert`
+
+**Visual Display:**
+
+- **Plot 1:** Daily P&L with dynamic color coding
+- **Plot 2:** Zero reference line
+- **Plot 3:** Maximum daily loss limit (negative value)
+- **Plot 4:** Maximum daily profit limit
+
+**Color Coding:**
+
+- **Red:** Daily P&L exceeds loss or profit limit (alert state)
+- **Default:** P&L within safe limits
+
+**Parameters:**
+
+- `AccountNumber`: Account identifier (string, default: "")
+- `MaxDailyLoss`: Loss threshold (default: $5,000)
+- `MaxDailyProfit`: Profit threshold (default: $5,000)
+
+**Note:** Real-time only; not useful for historical backtesting.
+
+### Component 4: AccountEquityMonitor - Indicator
+
+**Purpose:** Visual monitoring display showing current daily P&L and risk boundaries.
+
+**Operation:**
+
+- Calculates daily P&L on every bar: `DailyNetPL = CurrentAccountEquity - BDAccountEquity`
+- Evaluates limits: `WithinLimits = (DailyNetPL > -MaxDailyLoss) and (DailyNetPL < MaxDailyProfit)`
+- Continuously updates visual plots
+
+**Visual Display:**
+
+- **Plot 1:** Daily P&L line
+- **Plot 2:** Maximum daily loss limit (negative value)
+- **Plot 3:** Maximum daily profit limit
+
+**Color Coding:**
+
+- **Green:** Daily P&L within acceptable limits
+- **Red:** Daily P&L violates loss or profit boundary
+
+**Parameters:**
+
+- `AccountNumber`: Account identifier (string, default: "")
+- `MaxDailyLoss`: Loss threshold (default: $5,000)
+- `MaxDailyProfit`: Profit threshold (default: $5,000)
+
+**Use:** Continuous visual feedback during live trading sessions.
+
+### System Behavior
+
+**Normal Trading State:**
+
+- Account opens; daily P&L starts at zero
+- Monitor displays P&L within green bands [−MaxDailyLoss, +MaxDailyProfit]
+- Risk Gate allows strategy execution and new trades
+
+**Limit Breach:**
+
+1. Daily P&L reaches or exceeds a limit
+2. Alert Indicator triggers (audible/visual notification)
+3. Kill Switch detects breach on next real-time bar
+4. All open positions close immediately (`This Bar on Close`)
+5. Latch mechanism engages: `RiskTriggered = True`
+6. Monitor changes Plot 1 to red color
+
+**Remainder of Day:**
+
+- No new trades allowed (strategy container blocked)
+- Latch prevents re-enablement even if P&L recovers
+- Monitor remains red until end of session
+- Alert remains active as reminder
+
+**Next Trading Day:**
+
+- Latch resets automatically
+- Daily P&L calculation begins fresh
+- Risk gate re-evaluates from new beginning equity
+
+### Integration
+
+All four components work together:
+
+- **Function v2:** Calculates risk status
+- **Kill Switch v2:** Uses function to enforce trading halt and close positions
+- **Alert Indicator:** Uses same limit logic to notify before positions close
+- **Monitor Indicator:** Uses same limit logic to visualize status continuously
+
+### Parameters Summary
+
+| Parameter      | Function v2 | Kill Switch v2   | Alert Indicator | Monitor Indicator |
+| -------------- | ----------- | ---------------- | --------------- | ----------------- |
+| MaxDailyLoss   | ✓           | ✓                | ✓               | ✓                 |
+| MaxDailyProfit | ✓           | ✓                | ✓               | ✓                 |
+| AccountID      | ✓           | via GetAccountID | AccountNumber   | AccountNumber     |
+
+### Notes
 
 ### Parameters
 
