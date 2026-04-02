@@ -1,7 +1,5 @@
 {-------------------------------------------------------------------
-Versión 2 con semántica y lógicas ajustadas
-Inputs mantienen su nombre original pero Vars y lógica interna se han reescrito para mejorar 
-claridad, consistencia y adaptabilidad.
+ATRDollar TrailStop Version 2
 -------------------------------------------------------------------}
 
 Inputs:
@@ -57,49 +55,4 @@ Begin
 		SetDollarTrailing(TrailDistance * BigPointValue);
 End;
 
-{ 	
-Volatility-aware, state-driven exit engine
-🧩 Se trata de un componente de salida inteligente, basado en volatilidad (ATR), que:
-🔹protege al inicio
-🔹exige progreso real al trade,
-🔹y solo entonces deja correr beneficios con un trailing dinámico.
-🔹No entra al mercado. No decide dirección. Solo gestiona la salida.
-🔹Las entradas: NO están aquí, vienen de estrategias pre-creadas (e.g., MACD LE/SE...)
 
-📊 Flujo lógico paso a paso (barra a barra)
-🟦 Estado 1: Flat
-MarketPosition = 0
-TrailingActive = false
-Nada ocurre. El sistema está limpio.
-
-🟨 Estado 2: Trade abierto – SIN trailing
-MarketPosition ≠ 0
-TrailingActive = false
-✔ Se aplica Stop Loss inicial
-✔ Basado en ATRStopLoss × ATR
-✔ Convertido a dinero con BigPointValue
-📌 Objetivo aquí: no perder demasiado si el trade falla rápido
-
-🚪 Evento clave: activación del trailing (el “floor”)
-🔹Para largo: High ≥ EntryPrice + (ATRFloor × ATR)
-🔹Para corto: Low ≤ EntryPrice − (ATRFloor × ATR)
-👉 Solo si el mercado realmente se mueve a favor, activamos trailing.
-TrailingActive = true;
-
-🟩 Estado 3: Trailing activo
-SetDollarTrailing(ATRTrail × ATR × BigPointValue);
-Ahora:
-🔹el stop sigue al precio
-🔹se adapta a la volatilidad
-🔹protege beneficios
-🔹deja respirar al mercado
-
-🧠 Resumen mental / interpretación conceptual (para interiorizar)
-🔑 Entro al mercado con riesgo controlado
-🔑 Si el trade no demuestra valor, salgo rápido
-🔑 Si demuestra valor, lo dejo correr
-🔑 El mercado decide cuándo me saca, no yo
-🔑 Todo se adapta automáticamente a la volatilidad
-
-O dicho de otra forma: Primero sobrevivo, luego participo, solo después optimizo
-}
