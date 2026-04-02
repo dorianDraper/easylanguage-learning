@@ -3,7 +3,7 @@ Gap Down v2
 
 Structure improvements:
 - Added state machine variable (IsLong) for better readability and maintainability.
-- Separated logic into clear sections (gap detection, entry setup, state machine, exit setup
+- Separated logic into clear sections (gap detection, entry setup, state machine, exit setup)
 - Added comments for clarity.
 
 -------------------------------------------------------------------}
