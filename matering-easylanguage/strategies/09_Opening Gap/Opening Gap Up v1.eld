@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Gap Up v1
+Opening Gap Up v1
 
 Structure (symmetry with Gap Down v2):
 - State machine variable (IsShort) for better readability and maintainability.
