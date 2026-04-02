@@ -1,5 +1,10 @@
 {-------------------------------------------------------------------
-ATRDollar TrailStop Version 2
+ATRDollar TrailStop v2
+
+Structure improvements:
+- Renamed variables for clarity (e.g., ATRValue, FloorDistance, TrailDistance, StopLossDistance)
+- Added comments for better understanding of each step
+
 -------------------------------------------------------------------}
 
 Inputs:
