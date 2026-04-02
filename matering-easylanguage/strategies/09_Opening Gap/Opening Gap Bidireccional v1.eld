@@ -1,6 +1,9 @@
 {-------------------------------------------------------------------
-Unifica Opening Gap Down v2 y Opening Gap Up v2 para una semántica más clara,
-menor mantenimiento y sin duplicidad de código
+Opening Gap Bidireccional v1
+
+Unifies Opening Gap Down v2 and Opening Gap Up v2 for clearer semantics,
+less maintenance, and no code duplication
+
 -------------------------------------------------------------------}
 
 Inputs:
