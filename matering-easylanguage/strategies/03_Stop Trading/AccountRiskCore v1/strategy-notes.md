@@ -277,6 +277,6 @@ The system evolved through versions:
 - **v1:** Basic risk gate mechanism
 - **v2:** Added latch mechanism to prevent re-enablement after triggering, ensuring hard stops
 
-The refactoring to `AccountRiskCore` function was driven by the need to **eliminate duplicate logic** across the strategy, monitors, and alerts. Now all four components use a single function, creating a "single source of truth" for risk evaluation.
+The refactoring to `AccountRiskCore` function (see AccountRiskCore v2) was driven by the need to **eliminate duplicate logic** across the strategy, monitors, and alerts. Now all four components use a single function, creating a "single source of truth" for risk evaluation.
 
 ### Notes
