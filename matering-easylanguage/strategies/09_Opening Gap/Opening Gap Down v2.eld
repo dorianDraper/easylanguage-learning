@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-Gap Down v2
+Opening Gap Down v2
 
 Structure improvements:
 - Added state machine variable (IsLong) for better readability and maintainability.
