@@ -7,6 +7,7 @@
     - Entry based on the relationship between the two moving averages and price, only when not already in a position
     
 -------------------------------------------------------------------}
+
 Inputs:
 	MALenData1(12),
 	MALenData2(24);
