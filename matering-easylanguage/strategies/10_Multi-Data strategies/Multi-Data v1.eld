@@ -1,7 +1,8 @@
 {-------------------------------------------------------------------
     Multi-Data Strategy v1.0
-    Description:
+    Description: 
     Simple multi-data strategy using moving averages from two different data series.
+    
     Additional controls:
     - Entry based on the relationship between the two moving averages and price
     - Exit based on price crossing the moving average of the first data series
