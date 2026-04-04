@@ -1,9 +1,11 @@
-{	Key Reversal al alza y a la	baja para identificar puntos de entrada:
-	> Orden limitada comprar en la barra siguiente a una barra Key Reversal al alza. Precio limitado mejor que el cierre de la barra actual.
-	> Orden limitada vender al descubierto en la barra siguiente a una barra Key Reversal a la baja. Precio limitado mejor que el cierre de la barra actual.
-	Input: número puntos por encima o por debajo del cierre de la barra Key Reversal con el que fijaremos el precio de las órdenes limitadas
-	(5 puntos por defecto).
-}
+{-------------------------------------------------------------------	
+ Key Reversal v1
+ 
+ Description:
+ - Identifies potential key reversal patterns in the market.
+ - A key reversal occurs when the price makes a new high or low compared to the previous bar but closes in the opposite direction, indicating a potential reversal in market sentiment.
+ 
+-------------------------------------------------------------------}
 
 Input:
 	LimitPoints(.05);
