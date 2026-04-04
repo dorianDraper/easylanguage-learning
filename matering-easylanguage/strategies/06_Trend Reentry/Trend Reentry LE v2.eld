@@ -60,9 +60,12 @@ Begin
 	
 	//Salida final por cambio de tendencia
 	If BearCross Then
+	Begin
 		Sell ("TrendLX") Next Bar at Market;
 		CanReEnter = False;
 		MoveHigh = 0;
+	End;
+	
 End;
 
 // Re-entrada
