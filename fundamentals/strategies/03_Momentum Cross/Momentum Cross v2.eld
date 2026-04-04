@@ -52,6 +52,7 @@ If DownMom Then
 If UpMom Then 
 	BuyToCover Next Bar at Market;
 
+{
 // Print Log
 Print("Date", Spaces(2), Date:7:0, Spaces(2), "Time", Spaces(2), Time:4:0,
 Spaces(2), "Mom", Spaces(2), Mom, Spaces(2), "BullMom", Spaces(2), BullMom,
@@ -61,28 +62,4 @@ Spaces(2), "BearMom", Spaces(2), BearMom);
 Commentary("Date", Spaces(2), Date:7:0, Spaces(2), "Time", Spaces(2), Time:4:0,
 Spaces(2), "Mom", Spaces(2), Mom, Spaces(2), "BullMom", Spaces(2), BullMom,
 Spaces(2), "BearMom", Spaces(2), BearMom);
-
-
-{	📈 Momentum continuation
-	🚦 Entrada solo con impulso limpio
-	🧠 Salida por deterioro de impulso
-	❌ Sin stops fijos
-	❌ Sin targets
-	✅ Basada en estructura del mercado
-	
-	“Solo entro cuando el mercado demuestra intención clara. Me quedo 
-	mientras esa intención se mantiene. Salgo en cuanto esa intención 
-	empieza a debilitarse.”
-
-	🧠 Resumen mental (muy importante)
-	Crear variables booleanas mejora:
-		- lectura
-		- depuración
-		- mantenimiento
-	🚀 Separamos siempre:
-		🔹 eventos primarios (cruces, rupturas)
-		🔹 filtros (MRO, time filters)
-		🔹 salidas (deterioro, stops)
-
-	👉 Esta forma de pensar es exactamente la que se usa en sistemas profesionales y research cuantitativo.
-}
+}	
