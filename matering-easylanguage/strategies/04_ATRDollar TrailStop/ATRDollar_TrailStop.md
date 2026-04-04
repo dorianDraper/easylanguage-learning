@@ -94,12 +94,12 @@ Entry                Floor reached           Trail active
   │                       │                      │
   ▼                       ▼                      ▼
 ──┼───────────────────────┼──────────────────────┼────────►
-  │← StopLoss (1×ATR) ──►│← TrailStop (1×ATR) ──┤
+  │← StopLoss (1×ATR) ──► │← TrailStop (1×ATR) ──┤
   │                       │
   │← Floor (2×ATR) ──────►│ (activates trailing)
 ```
 
-Think of it as a two-stage rocket: the initial stop is the booster that keeps the trade alive through early turbulence, and the trailing stop is the cruise engine that takes over once the trade has reached altitude.
+🚀 Think of it as a two-stage rocket: the initial stop is the booster that keeps the trade alive through early turbulence, and the trailing stop is the cruise engine that takes over once the trade has reached altitude.
 
 ---
 
