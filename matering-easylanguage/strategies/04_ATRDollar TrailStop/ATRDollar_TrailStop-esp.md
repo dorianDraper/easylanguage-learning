@@ -99,7 +99,7 @@ Entrada             Floor alcanzado        Trailing activo
   │← Floor (2×ATR) ──────►│ (activa el trailing)
 ```
 
-Piénsalo como un cohete de dos etapas: el stop inicial es el propulsor que mantiene la operación viva a través de la turbulencia temprana, y el trailing stop es el motor de crucero que toma el control una vez que la operación ha alcanzado altitud.
+🚀 Piénsalo como un cohete de dos etapas: el stop inicial es el propulsor que mantiene la operación viva a través de la turbulencia temprana, y el trailing stop es el motor de crucero que toma el control una vez que la operación ha alcanzado altitud.
 
 ---
 
