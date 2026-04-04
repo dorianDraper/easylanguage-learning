@@ -115,8 +115,6 @@ v2 añade `oWithinLimits` como salida `truefalseref` — un booleano pasado por 
 | Llamada por indicadores | ✗ | ✓ |
 | Nomenclatura de variable interna | `DailyNetPL` / `ComputedDailyPL` | `ComputedPL` (limpio, sin ambigüedad) |
 
-> **Nota sobre el guión bajo final en el código v1 original:** El código fuente original muestra `AccountRiskCore_Function_ = oWithinLimits` con un guión bajo final en la asignación de retorno. Esto es un error tipográfico en el nombre de la función — el nombre correcto es `AccountRiskCore_Function_v2`. TradeStation detectará esta discrepancia en tiempo de compilación. Asegúrate de que la asignación de retorno coincida exactamente con el nombre declarado de la función.
-
 ---
 
 ### AccountRiskCore_Strategy_v2

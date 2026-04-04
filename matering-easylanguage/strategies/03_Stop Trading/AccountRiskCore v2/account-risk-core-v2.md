@@ -115,8 +115,6 @@ v2 adds `oWithinLimits` as a `truefalseref` output — a pass-by-reference boole
 | Called by indicators | ✗ | ✓ |
 | Internal variable naming | `DailyNetPL` / `ComputedDailyPL` | `ComputedPL` (clean, unambiguous) |
 
-> **Note on the trailing underscore in v1 code:** The original source code shows `AccountRiskCore_Function_ = oWithinLimits` with a trailing underscore in the return assignment. This is a typo in the function name — the correct name is `AccountRiskCore_Function_v2`. TradeStation will flag this as a mismatch at compile time. Ensure the return assignment matches the declared function name exactly.
-
 ---
 
 ### AccountRiskCore_Strategy_v2
