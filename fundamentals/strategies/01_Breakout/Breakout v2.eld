@@ -1,4 +1,10 @@
-// Una actualizacion de v1 con mejoras en legibilidad, intención semántica y preparación para futuras extensiones.
+{-------------------------------------------------------------------	
+ Breakout v2
+
+ Description:
+ - Improve legibility and semantic intention of Breakout v1
+ - Prepare code for future extensions (filters, risk management, post-analysis)
+-------------------------------------------------------------------}
 
 Inputs:
 	LongPrice(High),

@@ -1,6 +1,11 @@
-{	Primera estrategia del curso: compra en una ruptura por encima del High más alto de las 8 barras anteriores; 
-    vende al descubierto en una ruptura por debajo del Low más bajo de las últimas barras precedentes.
-}
+{-------------------------------------------------------------------	
+ Breakout v1 
+
+ Description:
+ - Breakout strategy based on the highest high and lowest low of the last 8 bars
+ - Uses stop orders to enter the market on breakouts
+ 
+-------------------------------------------------------------------}
 
 Input:
 	TrlgBars(8);

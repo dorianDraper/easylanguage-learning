@@ -1,5 +1,10 @@
-// Mejora de las anteriores versiones con foco en legibilidad, intención semántica y preparación para futuras extensiones. 
-// Añadimos gestión de riesgo, análisis posterior y mejoramos la claridad del código.
+{-------------------------------------------------------------------	
+ Breakout v3
+
+ Description:
+ - Adds risk management (stop loss, profit target, break even) to Breakout v2
+ - Maintains legibility and semantic intention
+-------------------------------------------------------------------}
 
 Input:
 	BuyLen(8),
