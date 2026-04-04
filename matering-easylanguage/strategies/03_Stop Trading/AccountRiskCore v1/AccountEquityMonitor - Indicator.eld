@@ -40,7 +40,7 @@ Else
 	SetPlotColor(1, Red);  
 	
 
-{🎨 Colores explícitos
+{ Colores explícitos
 SetPlotColor(1, Darkgreen);        // Daily P&L
 SetPlotColor(2, Darkred);    // Max Loss
 SetPlotColor(3, Cyan);    // Max Profit

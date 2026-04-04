@@ -13,7 +13,7 @@ Vars:
 	DailyNetPL(0),
 	WithinLimits(false);
 
-{⚠️ Solo ejecutar en la última barra visible}
+{Solo ejecutar en la última barra visible}
 If LastBarOnChart Then
 Begin
 	// Equity inicio del día
@@ -45,7 +45,7 @@ Plot4(MaxDailyProfit, "Max Profit");
 If not WithinLimits Then
 	SetPlotColor(1, Red);
 
-{🎨 Colores explícitos
+{ Colores explícitos
 SetPlotColor(1, Olive);
 SetPlotColor(2, Gainsboro);
 SetPlotColor(3, IndianRed);
