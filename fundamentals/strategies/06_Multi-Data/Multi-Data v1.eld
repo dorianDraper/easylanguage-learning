@@ -1,6 +1,13 @@
-{Esta estrategia utiliza 2 conjuntos de Data para generar únicamente señaleslar gas. Se toman cuando el Close del Data1 
-está por encima del promedio de sus 20 barras; y el Close de Data2 está  por encima de su media de 50 barras.
-}
+{-------------------------------------------------------------------	
+ Multi-Data v1
+
+ Description:
+ - Implements a long-only strategy that uses two different data series (timeframes) to confirm trade
+   entries.
+ - The strategy buys when the price on the primary timeframe (Data1) is above its moving average and 
+ the price on the secondary timeframe (Data2) is also above its moving average, indicating a strong bullish trend across multiple timeframes.
+
+ -------------------------------------------------------------------}
 
 Input:
 	MALenD1(20),
