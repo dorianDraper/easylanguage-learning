@@ -227,7 +227,7 @@ This does not mean the strategy cannot work — mean reversion at channel extrem
 - **RSI or z-score filter:** Requiring an additional overbought/oversold condition (e.g. `RSI < 20` for longs) adds a statistical confirmation that the move is genuinely overextended.
 - **Volume spike confirmation:** Real exhaustion moves are often accompanied by volume expansion. An elevated volume filter can separate climactic reversals* from routine new lows.
 
-> ***note:** Climactic reversals are high-volume, rapid price spikes signaling a trend's exhaustion and a potential sharp reversal, often occurring when a trend moves "too far, too fast". These "exhaustion" moves, such as buying/selling climaxes or V-bottoms, signify the final capitulation of one side (shorts or longs) and the entry of opposing big players.
+> ***Note:** Climactic reversals are high-volume, rapid price spikes signaling a trend's exhaustion and a potential sharp reversal, often occurring when a trend moves "too far, too fast". These "exhaustion" moves, such as buying/selling climaxes or V-bottoms, signify the final capitulation of one side (shorts or longs) and the entry of opposing big players.
 
 The research accompanying this strategy also raises an interesting inversion hypothesis: if the contrarian Donchian system struggles, it may be because the signal itself has edge — but in the trend-following direction. Testing the inverted version (buy new highs, sell new lows) against the same sizing mechanism is a natural next research step.
 
