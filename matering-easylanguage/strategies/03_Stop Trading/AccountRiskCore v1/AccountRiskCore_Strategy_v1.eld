@@ -1,7 +1,8 @@
 {-------------------------------------------------------------------
-Account Equity Risk Gate with Kill Switch v1.0
+AccountRiskCore_Strategy_v1
  
  Description:
+ 	- Initial version of the account risk core strategy.
  	- Controls whether trading is allowed based on daily account P&L.
  	- Acts as a wrapper around any strategy.
 
@@ -29,7 +30,7 @@ IsShort = MarketPosition = -1;
 If LastBarOnChart Then
     // Evaluamos si la cuenta puede seguir operando, llamada a la función que implementa la lógica de stop a nivel de cuenta
 	AccountTradingAllowed = 
-		AccountEquityStop_JP(
+		AccountRiskCore_Function_v1(
 			MaxDailyLoss,
 			MaxDailyProfit,
 			GetAccountID,

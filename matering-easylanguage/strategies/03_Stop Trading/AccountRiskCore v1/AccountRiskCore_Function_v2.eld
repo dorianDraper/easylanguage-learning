@@ -1,8 +1,8 @@
 {-------------------------------------------------------------------
- v2.0 - Updated version of the AccountEquityStop_JP function with improved structure and comments.
+ AccountRiskCore_Function_v2
 
  Description:
- Evaluates whether daily account P&L is within allowed limits.
+ Updated version of the AccountRiskCore_Function_v1 with improved structure and comments.
 
  Returns:
     True  -> trading allowed
@@ -41,6 +41,6 @@ oDailyNetPL     = ComputedDailyPL;
 --------------------------------------------------}
 If (ComputedDailyPL > -MaxDailyLoss) and
    (ComputedDailyPL <  MaxDailyProfit) Then
-	AccountEquityStop_JP = True
+	AccountRiskCore_Function_v2 = True
 Else
-	AccountEquityStop_JP = False;
+	AccountRiskCore_Function_v2 = False;

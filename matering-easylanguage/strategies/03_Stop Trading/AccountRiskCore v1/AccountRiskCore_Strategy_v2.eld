@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
- Account Equity Risk Gate with Kill Switch v2.0
+ AccountRiskCore_Strategy_v2
  
  Improvements over v1.0:
  	- Added a latch mechanism to ensure that once the risk gate is triggered, it remains off for the rest of the day.
@@ -34,7 +34,7 @@ If LastBarOnChart Then
 Begin
 
 	AccountTradingAllowed =
-		AccountEquityStop_JP(
+		AccountRiskCore_Function_v2(
 			MaxDailyLoss,
 			MaxDailyProfit,
 			GetAccountID,

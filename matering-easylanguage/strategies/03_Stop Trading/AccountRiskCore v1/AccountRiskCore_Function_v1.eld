@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
- v1.0 - AccountEquityStop_JP function
+ AccountRiskCore_Function_v1 - v1.0
 
  Description:
  Evaluates whether daily account P&L is within allowed limits.
@@ -42,6 +42,6 @@ oDailyNetPL = DailyNetPL;
 // Si el P&L diario está dentro de los límites permitidos, devolvemos True (se permite operar), si no, False (se bloquea el trading)
 If DailyNetPL > -MaxDailyLoss
 	and DailyNetPL <  MaxDailyProfit Then
-	AccountEquityStop_JP = True   // trading permitido
+	AccountRiskCore_Function_v1 = True   // trading permitido
 Else
-	AccountEquityStop_JP = False; // trading bloqueado
+	AccountRiskCore_Function_v1 = False; // trading bloqueado
