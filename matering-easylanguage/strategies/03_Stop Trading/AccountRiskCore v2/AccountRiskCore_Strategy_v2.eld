@@ -1,7 +1,7 @@
 {-------------------------------------------------------------------
- AccountRiskCore_Strategy
+ AccountRiskCore_Strategy_v2
 
- This strategy demonstrates how to use the updated AccountRiskCore_Function to implement an equity 
+ This strategy demonstrates how to use the updated AccountRiskCore_Function_v2 to implement an equity 
  risk gate with a kill switch. The strategy evaluates the daily net profit/loss against 
  specified limits and disables trading if those limits are breached.
 
@@ -34,7 +34,7 @@ If LastBarOnChart Then
 Begin
 
 	AccountTradingAllowed =
-		AccountRiskCore_Function(
+		AccountRiskCore_Function_v2(
 			MaxDailyLoss,
 			MaxDailyProfit,
 			GetAccountID,
