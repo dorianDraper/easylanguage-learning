@@ -69,32 +69,3 @@ End;
 If MarketPosition = 0 and CanReEnter
 	and High > MoveHigh + ReEntryBuffer Then
 	Buy ("ReEntryLE") Next Bar at Market;
-
-
-{Diagrama de estados:
-┌─────────┐
-│  FLAT   │
-└────┬────┘
-     │ FastMA crosses over SlowMA
-     ▼
-┌──────────────┐
-│  LONG ACTIVE │  ← seguimos el movimiento
-└────┬─────────┘
-     │ extensión excesiva (nuevo HH significativo)
-     ▼
-┌──────────────┐
-│ TECH EXIT    │  ← salida técnica, no fallo de tendencia
-│ CanReEnter=1 │
-└────┬─────────┘
-     │ continuidad alcista (nuevo impulso)
-     ▼
-┌──────────────┐
-│ RE-ENTER LONG│
-└────┬─────────┘
-     │ FastMA crosses under SlowMA
-     ▼
-┌─────────┐
-│  FLAT   │  ← tendencia invalidada
-└─────────┘
-
-}
