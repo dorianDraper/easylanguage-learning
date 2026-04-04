@@ -4,7 +4,7 @@
 
 Multi-Data Basic is a long-only trend-following strategy that uses two data series from the same instrument at different timeframes to confirm trade entries. The primary timeframe (Data1) provides the execution signal; the secondary timeframe (Data2) provides the trend context filter. A long position is established when price is above its moving average on both timeframes simultaneously — confirming that short-term and longer-term momentum are aligned. When either condition fails, the position is closed.
 
-This is a foundational version designed to introduce the multi-timeframe concept in its simplest form. It shares the same core idea as the more sophisticated Multi-Data Strategy v1–v4 documented elsewhere in this repository, but without state machines, discrete crossover events, re-entry logic, or named signal variables.
+This is a foundational version designed to introduce the multi-timeframe concept in its simplest form. It shares the same core idea as the more sophisticated Multi-Data Strategy v1–v4 documented elsewhere in [mastering repository](https://github.com/dorianDraper/easylanguage-learning/tree/main/matering-easylanguage/strategies/10_Multi-Data%20strategies), but without state machines, discrete crossover events, re-entry logic, or named signal variables.
 
 ---
 
@@ -132,7 +132,7 @@ The continuous state condition reflects a beginner-friendly design choice: the s
 
 ## Relationship to Multi-Data Strategy v1–v4
 
-This basic version and the Multi-Data Strategy v1–v4 documented earlier in this repository share the same foundational concept — dual-timeframe moving average confirmation — but implement it at very different levels of sophistication:
+This basic version and the Multi-Data Strategy v1–v4 documented in mastering repository [here](https://github.com/dorianDraper/easylanguage-learning/tree/main/matering-easylanguage/strategies/10_Multi-Data%20strategies) share the same foundational concept — dual-timeframe moving average confirmation — but implement it at very different levels of sophistication:
 
 | Aspect | Multi-Data Basic v1 | Multi-Data Strategy v1–v4 |
 |---|---|---|

@@ -4,7 +4,7 @@
 
 Multi-Data Básico es una estrategia de seguimiento de tendencia solo en largo que usa dos series de datos del mismo instrumento en distintos timeframes para confirmar las entradas. El timeframe primario (Data1) proporciona la señal de ejecución; el timeframe secundario (Data2) proporciona el filtro de contexto tendencial. Una posición larga se establece cuando el precio está por encima de su media móvil en ambos timeframes simultáneamente — confirmando que el momentum a corto y largo plazo están alineados. Cuando cualquiera de las condiciones falla, la posición se cierra.
 
-Esta es una versión fundacional diseñada para introducir el concepto multi-timeframe en su forma más simple. Comparte la misma idea central que la más sofisticada Multi-Data Strategy v1–v4 documentada en otro lugar de este repositorio, pero sin máquinas de estado, eventos discretos de cruce, lógica de reentrada o variables de señal con nombre.
+Esta es una versión fundacional diseñada para introducir el concepto multi-timeframe en su forma más simple. Comparte la misma idea central que la más sofisticada Multi-Data Strategy v1–v4 documentada en el repositorio [mastering](https://github.com/dorianDraper/easylanguage-learning/tree/main/matering-easylanguage/strategies/10_Multi-Data%20strategies), pero sin máquinas de estado, eventos discretos de cruce, lógica de reentrada o variables de señal con nombre.
 
 ---
 
@@ -132,7 +132,7 @@ La condición de estado continuo refleja una elección de diseño orientada al a
 
 ## Relación con Multi-Data Strategy v1–v4
 
-Esta versión básica y la Multi-Data Strategy v1–v4 documentada anteriormente en este repositorio comparten el mismo concepto fundacional — confirmación por media móvil en doble timeframe — pero lo implementan a niveles de sofisticación muy diferentes:
+Esta versión básica y la Multi-Data Strategy v1–v4 documentada en el repositorio mastering [aquí](https://github.com/dorianDraper/easylanguage-learning/tree/main/matering-easylanguage/strategies/10_Multi-Data%20strategies) comparten el mismo concepto fundacional — confirmación por media móvil en doble timeframe — pero lo implementan a niveles de sofisticación muy diferentes:
 
 | Aspecto | Multi-Data Básico v1 | Multi-Data Strategy v1–v4 |
 |---|---|---|
