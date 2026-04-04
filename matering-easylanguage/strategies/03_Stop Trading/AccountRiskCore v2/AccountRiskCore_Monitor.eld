@@ -1,7 +1,7 @@
 {-------------------------------------------------------------------
-AccountRiskCore_Monitor - Indicator
+AccountRiskCore_Monitor_v2 - Indicator
 
-Updated version of AccountRiskCore_Monitor in AccountRiskCore v1, now using AccountRiskCore_Function for core logic.
+Updated version of AccountRiskCore_Monitor in AccountRiskCore v1, now using AccountRiskCore_Function_v2 for core logic.
 -------------------------------------------------------------------}
 
 Inputs:
@@ -16,7 +16,7 @@ Vars:
 
 
 TradingAllowed =
-	AccountRiskCore_Function(
+	AccountRiskCore_Function_v2(
 		MaxDailyLoss,
 		MaxDailyProfit,
 		AccountNumber,
