@@ -1,3 +1,19 @@
+{-------------------------------------------------------------------
+ v1.0 - AccountEquityStop_JP function
+
+ Description:
+ Evaluates whether daily account P&L is within allowed limits.
+
+ Returns:
+    True  -> trading allowed
+    False -> trading blocked
+
+ Outputs:
+    oDailyNetPL -> current daily P&L
+
+-------------------------------------------------------------------}
+
+
 // Función de stop a nivel de cuenta basada en equity (P&L diario)
 Inputs:
 	MaxDailyLoss(numeric),
@@ -29,12 +45,3 @@ If DailyNetPL > -MaxDailyLoss
 	AccountEquityStop_JP = True   // trading permitido
 Else
 	AccountEquityStop_JP = False; // trading bloqueado
-
-{
-🧠 Esta función es un "account-level kill switch" que se puede usar dentro de cualquier estrategia 
-para controlar si la cuenta puede seguir operando o no en función del P&L diario. Si el P&L diario 
-supera los límites definidos, la función devuelve False, lo que indica que se debe detener toda la 
-actividad de trading en la cuenta. Esto es especialmente útil para proteger el capital y evitar 
-pérdidas excesivas o asegurar ganancias cuando se alcanzan ciertos objetivos.
-}
-
