@@ -1,3 +1,9 @@
+{-------------------------------------------------------------------
+AccountRiskCore_Alert - Indicator
+
+Updated version of AccountRiskCore_Alert in AccountRiskCore v1, now using AccountRiskCore_Function for core logic.
+-------------------------------------------------------------------}
+
 Inputs:
 	AccountNumber(""),
 	MaxDailyLoss(5000),
@@ -13,7 +19,7 @@ If LastBarOnChart Then
 Begin
 
 	TradingAllowed =
-		AccountRiskCore(
+		AccountRiskCore_Function(
 			MaxDailyLoss,
 			MaxDailyProfit,
 			AccountNumber,

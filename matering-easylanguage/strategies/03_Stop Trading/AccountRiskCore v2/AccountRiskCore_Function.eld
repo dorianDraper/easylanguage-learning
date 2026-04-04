@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
- AccountRiskCore
+ AccountRiskCore_Function - Function
 
  Description:
  Centralized account risk evaluation function.
@@ -55,4 +55,4 @@ oWithinLimits =
 {--------------------------------------------------
  Return permission
 --------------------------------------------------}
-AccountRiskCore = oWithinLimits;
+AccountRiskCore_Function = oWithinLimits;

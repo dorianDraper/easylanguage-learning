@@ -1,3 +1,9 @@
+{-------------------------------------------------------------------
+AccountRiskCore_Monitor - Indicator
+
+Updated version of AccountRiskCore_Monitor in AccountRiskCore v1, now using AccountRiskCore_Function for core logic.
+-------------------------------------------------------------------}
+
 Inputs:
 	AccountNumber(""),
 	MaxDailyLoss(5000),
@@ -10,7 +16,7 @@ Vars:
 
 
 TradingAllowed =
-	AccountRiskCore(
+	AccountRiskCore_Function(
 		MaxDailyLoss,
 		MaxDailyProfit,
 		AccountNumber,
