@@ -66,7 +66,9 @@ If TradeState = 2 Then
 If TradeState >= 1 and BarsSinceEntry >= ExitAfterBars Then
 Begin
 	Sell ("ExitLE1") Next Bar 100 Shares from Entry ("LE1") at Market;
-	TradeState = 0;
+	If TradeState = 1 Then
+		TradeState = 0;
+	// Si TradeState = 2, se mantiene en 2 hasta que ExitLE2 lo resulva
 End;
 
 If TradeState = 2 and ScaleBarsCounter >= ExitAfterBars Then
