@@ -1,7 +1,10 @@
-{Esta estrategia toma posiciones largas/cortas cuando el RSI sobrevendido/sobrecomprado empieza a girar. 
-Para los largos, el RSI debe estar por debajo de 50 y el valor mínimo del RSI de las últimas 7 barras tiene que
-haberse producido al menos 3 barras atrás. Los cortos al revés (RSI por encima de 50). Stops predefinidos.
-}
+{-------------------------------------------------------------------	
+ RSI Overbought/Oversold v1
+
+ Description:
+ - Identifies potential reversal points based on the Relative Strength Index (RSI).
+ - The strategy looks for situations where the RSI is on one side of the 50 level but has not made a new extreme in the last few bars, indicating a potential loss of momentum and a possible reversal.
+-------------------------------------------------------------------}
 
 Input:
 	Price(Close),
