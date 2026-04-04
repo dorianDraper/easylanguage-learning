@@ -1,5 +1,5 @@
 {-------------------------------------------------------------------
-ATRDollar TrailStop v2
+ATRDollar_TrailStop_v2
 
 Structure improvements:
 - Renamed variables for clarity (e.g., ATRValue, FloorDistance, TrailDistance, StopLossDistance)
