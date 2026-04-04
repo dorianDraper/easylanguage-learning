@@ -2,7 +2,7 @@
 First Hour Channel v1
 -------------------------------------------------------------------}
 
-[Intrabarordergeneration = TRUE] //Queremos que los límites ejecuten dentro de barra
+[Intrabarordergeneration = TRUE] 	//Queremos que los límites ejecuten dentro de barra
 
 Inputs:
 	StopTradingTime(1500),
@@ -11,10 +11,10 @@ Inputs:
 
 Vars:
 	HighVal(0),
-	LowVal(0),  //Ambas para canal de la primera hora
+	LowVal(0),  					//Ambas para canal de la primera hora
 	
 	Intrabarpersist LongTrade(0),
-	Intrabarpersist ShortTrade(0); //Controlamos estado real del trade y evitamos reseteo dentro misma barra
+	Intrabarpersist ShortTrade(0);  //Controlamos estado real del trade y evitamos reseteo dentro misma barra
 
 // Monitorización canal
 If Time <= CalcTime(SessionStartTime(1,1), 60) Then
