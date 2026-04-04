@@ -1,4 +1,13 @@
-// Versión 2 Momentum Cross
+{-------------------------------------------------------------------	
+ Momentum Cross v2
+
+ Description:
+ - Improved version of Momentum Cross v1
+ - Added limit orders with a configurable offset
+ - Same entry and exit logic, but more realistic execution
+ - Still no stops or targets, but more practical for live trading
+
+-------------------------------------------------------------------}
 
 Input:
 	Price(Close),

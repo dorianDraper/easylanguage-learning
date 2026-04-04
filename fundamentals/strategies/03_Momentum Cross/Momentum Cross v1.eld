@@ -1,9 +1,14 @@
-{
-> Esta estrategia compra (posición larga) cuando el momentum pasa por encima de 0, siempre que no lo haya pasado por debajo en las últimas 4 barras;
-> Vende al descubierto cuando el momentum cruza por debajo 0, siempre y cuando no lo haya cruzado por encima en las últimas 4 barras.
->> Liquida posiciones largas (vende) si el momentum disminuye en 2 barras consecutivas;
->> Cubre posiciones cortas (compra) si el momentum se eleva en 2 barras	consecutivas. 
-}
+{-------------------------------------------------------------------	
+ Momentum Cross v1
+
+ Description:
+ - Buy when Momentum crosses above 0, Sell when it crosses below 0
+ - Exit when Momentum changes direction (3 consecutive bars)
+ - No filters, no limit orders, no stops
+ - Very basic, not realistic, but good for learning
+ - Next version will add filters and limit orders
+ 
+-------------------------------------------------------------------}
 
 Input:
 	Price(Close),
