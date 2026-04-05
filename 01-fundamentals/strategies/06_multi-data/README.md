@@ -1,5 +1,7 @@
 # Multi-Data (Basic) — v1.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Multi-Data Basic is a long-only trend-following strategy that uses two data series from the same instrument at different timeframes to confirm trade entries. The primary timeframe (Data1) provides the execution signal; the secondary timeframe (Data2) provides the trend context filter. A long position is established when price is above its moving average on both timeframes simultaneously — confirming that short-term and longer-term momentum are aligned. When either condition fails, the position is closed.

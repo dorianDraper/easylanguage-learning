@@ -1,5 +1,7 @@
 # Key Reversal (Basic) — v1.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Key Reversal Basic is a pattern recognition strategy that identifies single-bar reversal signals and enters limit orders in the anticipated reversal direction. A bullish key reversal occurs when a bar makes a new low relative to the previous bar but closes higher than the previous close — indicating that a downside probe was rejected and buying pressure took over. A bearish key reversal is the mirror image. The strategy enters on a limit order slightly offset from the close, seeking a minor pullback after the signal bar rather than chasing the price at market.

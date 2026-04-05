@@ -1,5 +1,7 @@
 # Key Reversal (Básico) — v1.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Key Reversal Básico es una estrategia de reconocimiento de patrones que identifica señales de reversión de una sola barra y coloca órdenes límite en la dirección de reversión anticipada. Un key reversal alcista ocurre cuando una barra hace un nuevo mínimo respecto a la barra anterior pero cierra por encima del cierre anterior — indicando que una extensión bajista fue rechazada y la presión compradora tomó el control. El key reversal bajista es el espejo. La estrategia entra con una orden límite ligeramente desplazada desde el cierre, buscando un pequeño retroceso tras la barra de señal en lugar de perseguir el precio a mercado.

@@ -1,6 +1,6 @@
 # Breakout — v1.0, v2.0 & v3.0
 
-🇪🇸 Español | 🇬🇧 [English](README.md)
+🇪🇸 Español | 🇺🇸 [English](README.md)
 
 ## Descripción de la Estrategia
 

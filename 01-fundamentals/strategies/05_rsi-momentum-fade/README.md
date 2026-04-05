@@ -1,5 +1,7 @@
 # RSI Momentum Fade — v1.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 RSI Momentum Fade is a mean-reversion strategy that uses the RSI not as an overbought/oversold indicator in the classical sense, but as a momentum exhaustion detector. Rather than entering when RSI reaches extreme levels (70/30), the strategy enters when RSI is on one side of the 50 level — indicating directional bias — but has stopped making new extremes in the recent lookback window. This "cool-off" pattern suggests that the directional impulse is fading, creating a potential reversal opportunity before the RSI crosses back through 50.

@@ -1,5 +1,7 @@
 # Consecutive Extremes Fade — v1.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Consecutive Extremes Fade is a mean-reversion strategy that enters counter to short-term momentum runs. Rather than detecting a price level breakout, it counts consecutive bars making new highs or new lows and enters a fading position once the run reaches a configurable minimum length. The premise is that sustained consecutive extremes represent short-term overextension — a price that has made new lows on multiple consecutive bars has likely pushed too far in one direction and is a candidate for a bounce.

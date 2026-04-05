@@ -1,5 +1,7 @@
 # RSI Momentum Fade — v1.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 RSI Momentum Fade es una estrategia de mean-reversion que usa el RSI no como indicador de sobrecompra/sobreventa en el sentido clásico, sino como detector de agotamiento de momentum. En lugar de entrar cuando el RSI alcanza niveles extremos (70/30), la estrategia entra cuando el RSI está a un lado del nivel 50 — indicando sesgo direccional — pero ha dejado de marcar nuevos extremos en la ventana de lookback reciente. Este patrón de "enfriamiento" sugiere que el impulso direccional se está desvaneciendo, creando una oportunidad de reversión potencial antes de que el RSI cruce de nuevo a través de 50.

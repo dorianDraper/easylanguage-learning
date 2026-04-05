@@ -1,5 +1,7 @@
 # Momentum Cross — v1.0 & v2.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Momentum Cross es una estrategia de seguimiento de momentum que entra cuando el indicador Momentum cruza la línea cero, filtrado por una comprobación de recencia que garantiza que no se haya producido ningún cruce opuesto en la ventana de lookback reciente. Las salidas se basan en el deterioro del momentum — tres barras consecutivas de debilitamiento — en lugar de stops fijos o targets de beneficio. El sistema no tiene gestión de riesgo por niveles de precio por diseño: está construido para estudiar el comportamiento de la señal de momentum en sí antes de añadir controles de riesgo encima.

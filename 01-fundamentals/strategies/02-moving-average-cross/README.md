@@ -1,5 +1,7 @@
 # Moving Average Crossover — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Moving Average Crossover is a trend-following strategy that enters the market when the fast moving average crosses the slow moving average, interpreting the crossing event as a momentum shift. Entries are discrete events — the strategy only acts at the moment of the crossover, not while the fast MA is simply above or below the slow MA. Exits combine a minimum holding period with a minimum profit threshold: the strategy stays in a trade until enough time has elapsed and enough profit has not materialized, at which point it exits as an inefficient trade.

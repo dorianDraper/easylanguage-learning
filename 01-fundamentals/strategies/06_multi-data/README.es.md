@@ -1,5 +1,7 @@
 # Multi-Data (Básico) — v1.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Multi-Data Básico es una estrategia de seguimiento de tendencia solo en largo que usa dos series de datos del mismo instrumento en distintos timeframes para confirmar las entradas. El timeframe primario (Data1) proporciona la señal de ejecución; el timeframe secundario (Data2) proporciona el filtro de contexto tendencial. Una posición larga se establece cuando el precio está por encima de su media móvil en ambos timeframes simultáneamente — confirmando que el momentum a corto y largo plazo están alineados. Cuando cualquiera de las condiciones falla, la posición se cierra.

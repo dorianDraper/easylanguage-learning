@@ -1,5 +1,7 @@
 # Momentum Cross — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Momentum Cross is a momentum-following strategy that enters when the Momentum indicator crosses the zero line, filtered by a recency check that ensures no opposing crossover has occurred in the recent lookback window. Exits are driven by momentum deterioration — three consecutive bars of weakening momentum — rather than fixed stops or profit targets. The system has no price-level risk management by design: it is built to study the behavior of the momentum signal itself before layering risk controls on top.

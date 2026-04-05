@@ -1,5 +1,7 @@
 # Moving Average Crossover — v1.0 & v2.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Moving Average Crossover es una estrategia de seguimiento de tendencia que entra al mercado cuando la media móvil rápida cruza la media móvil lenta, interpretando el evento de cruce como un cambio de momentum. Las entradas son eventos discretos — la estrategia solo actúa en el momento del cruce, no mientras la MA rápida simplemente está por encima o por debajo de la lenta. Las salidas combinan un período mínimo de mantenimiento con un umbral mínimo de beneficio: la estrategia permanece en una operación hasta que ha transcurrido suficiente tiempo y no se ha materializado suficiente beneficio, momento en el que sale como una operación ineficiente.
