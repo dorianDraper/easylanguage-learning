@@ -1,5 +1,7 @@
 # Breakout — v1.0, v2.0 & v3.0
 
+🇪🇸 Español | 🇬🇧 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Breakout es una estrategia de seguimiento de momentum que entra al mercado cuando el precio rompe más allá del máximo más alto o el mínimo más bajo de una ventana de lookback configurable. La premisa central es simple: si el mercado ha estado contenido dentro de un rango durante un número de barras y luego rompe ese rango con convicción, el breakout vale la pena operarlo. La estrategia es always-in-the-market por diseño — las órdenes stop están activas en cada barra y solo se ejecutan si el precio alcanza el nivel de breakout.
