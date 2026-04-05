@@ -1,5 +1,7 @@
 # AccountRiskCore — v2
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción del Sistema
 
 AccountRiskCore v2 es una evolución arquitectónica del sistema v1. La lógica de trading y el comportamiento de protección del riesgo son idénticos — monitorización del P&L diario, límites bidireccionales, mecanismo de latch y kill switch — pero v2 reestructura cómo se consume la función central. En v1, `AccountRiskCore_Function` solo era llamada por la estrategia; los indicadores duplicaban el cálculo del P&L internamente. En v2, los cuatro componentes llaman a la misma función, logrando una verdadera separación de responsabilidades y eliminando toda lógica redundante.

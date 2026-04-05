@@ -1,5 +1,7 @@
 # Equity-Adaptive Donchian Mean Reversion — v1.0, v2.0 & v3.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 The Equity-Adaptive Donchian Mean Reversion Strategy combines two distinct ideas into a single system: a Donchian channel breakout as the entry trigger, and a profit-driven position sizing mechanism that scales exposure up during winning periods and contracts it during drawdowns. The entry logic is contrarian — it buys when price makes a new low and sells short when price makes a new high, betting on reversion to the mean rather than trend continuation. The position sizing layer introduces a compounding effect: for every fixed dollar amount of cumulative profit, position size grows by a defined step, up to a configurable maximum.

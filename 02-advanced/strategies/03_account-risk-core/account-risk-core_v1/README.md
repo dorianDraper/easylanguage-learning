@@ -1,5 +1,7 @@
 # AccountRiskCore — v1
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## System Description
 
 AccountRiskCore is an account-level risk management system that monitors daily profit and loss in real time and automatically halts all trading activity when predefined limits are breached. It is not a trading strategy — it is a protective wrapper that any trading strategy can live inside. The system evaluates account equity continuously, provides visual monitoring and audible alerts, and mechanically closes all open positions the moment a risk threshold is crossed.

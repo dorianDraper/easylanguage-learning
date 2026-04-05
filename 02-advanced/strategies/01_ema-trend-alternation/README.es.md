@@ -1,5 +1,7 @@
 # EMA Trend Alternation Strategy — v1.0, v2.0 & v3.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 La EMA Trend Alternation Strategy es un sistema de seguimiento de tendencia construido en torno a una única restricción estructural: **la alternancia direccional es obligatoria**. Tras cerrar una operación larga, la estrategia no puede abrir otra posición larga hasta que se haya tomado una corta — y viceversa. Esta rotación forzada no es un efecto secundario de la lógica; es el rasgo arquitectónico definitorio. La dirección tendencial se determina por la relación entre una EMA rápida y una EMA lenta, y un período de cooldown configurable impide la reentrada inmediata tras una salida. Todas las posiciones se gestionan con targets de beneficio y stops de pérdida fijos.

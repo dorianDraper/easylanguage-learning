@@ -1,5 +1,7 @@
 ## KeyReversal Detector - ShowMe Indicator
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ### Overview
 
 The **KeyReversal Detector** is a visual indicator that identifies classic key reversal patterns on a chart. It detects when price makes a structural low followed by a bullish close, which often signals the beginning of a bounce or reversal. The indicator plots three distinct levels of confirmation, allowing traders to see both the pattern development and completion.

@@ -1,5 +1,7 @@
 ## First Hour Channel - Indicator
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ### Description
 
 Displays the opening hour's high and low as fixed horizontal reference lines during the trading session. The indicator captures the highest and lowest prices during the first 60 minutes (default), then plots these levels from the end of the first hour until a specified stop time (default: 3:00 PM). Used to identify opening range breakouts and support/resistance boundaries throughout the day.

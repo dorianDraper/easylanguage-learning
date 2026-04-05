@@ -1,5 +1,7 @@
 # Donchian-Style Breakout Indicator v2
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Overview
 This indicator identifies **price breakouts from a historical range** using a Donchian-style channel. It calculates the highest high and lowest low over a specified lookback period (excluding the current bar) and signals when price breaks above or below these levels.
 

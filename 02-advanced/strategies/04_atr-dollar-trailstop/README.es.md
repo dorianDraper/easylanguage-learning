@@ -1,5 +1,7 @@
 # ATRDollar TrailStop — v1.0 & v2.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 ATRDollar TrailStop es un componente de gestión dinámica de salidas que reemplaza los stops fijos en puntos o en dólares por un mecanismo de trailing adaptativo a la volatilidad. En lugar de establecer un stop a una distancia predeterminada desde la entrada, el componente recalcula continuamente la distancia del stop basándose en el Average True Range (ATR), de modo que el stop se amplía de forma natural en períodos volátiles y se estrecha en períodos tranquilos. El stop se expresa en términos de dólares usando `BigPointValue`, haciéndolo agnóstico al instrumento y directamente comparable entre diferentes contratos de futuros.

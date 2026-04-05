@@ -1,5 +1,7 @@
 # EMA Trend Alternation Strategy — v1.0, v2.0 & v3.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 The EMA Trend Alternation Strategy is a trend-following system built around a single structural constraint: **directional alternation is mandatory**. After closing a long trade, the strategy cannot open another long until a short has been taken first — and vice versa. This enforced rotation is not a side effect of the logic; it is the defining architectural feature. Trend direction is determined by the relationship between a fast and a slow exponential moving average, and a configurable cooldown period prevents re-entry immediately after an exit. All positions are managed with fixed profit targets and stop losses.

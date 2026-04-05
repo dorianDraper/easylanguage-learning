@@ -1,5 +1,7 @@
 # Equity-Adaptive Donchian Mean Reversion — v1.0, v2.0 & v3.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 La Equity-Adaptive Donchian Mean Reversion Strategy combina dos ideas distintas en un único sistema: un breakout del canal Donchian como disparador de entrada, y un mecanismo de sizing dinámico que escala la exposición al alza durante períodos de ganancia y la contrae durante drawdowns. La lógica de entrada es contraria — compra cuando el precio marca un nuevo mínimo y vende corto cuando marca un nuevo máximo, apostando por la reversión a la media en lugar de la continuación de tendencia. La capa de sizing introduce un efecto de compuesto: por cada cantidad fija de beneficio acumulado, el tamaño de posición crece un paso definido, hasta un máximo configurable.

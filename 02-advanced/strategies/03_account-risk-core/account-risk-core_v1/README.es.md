@@ -1,5 +1,7 @@
 # AccountRiskCore — v1
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción del Sistema
 
 AccountRiskCore es un sistema de gestión del riesgo a nivel de cuenta que monitoriza el beneficio y la pérdida diarios en tiempo real y detiene automáticamente toda actividad de trading cuando se superan límites predefinidos. No es una estrategia de trading — es un wrapper de protección dentro del cual puede vivir cualquier estrategia. El sistema evalúa la equity de la cuenta de forma continua, proporciona monitorización visual y alertas sonoras, y cierra mecánicamente todas las posiciones abiertas en el momento en que se cruza un umbral de riesgo.

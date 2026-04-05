@@ -1,5 +1,7 @@
 # End-of-Day Exit — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 End-of-Day Exit is an exit-only component that automatically closes all open positions a configurable number of minutes before the market session ends. It is not a trading strategy — it is a protective wrapper that can be added to any intraday strategy to guarantee that no positions are held overnight. The component handles both live trading and backtesting, using real computer time for live execution and `SetExitOnClose` as a historical approximation for strategy validation.
