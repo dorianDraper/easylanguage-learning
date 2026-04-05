@@ -1,5 +1,7 @@
 # Opening Gap Bidireccional — v1.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Opening Gap Bidireccional consolidates the logic of Opening Gap Down v2 and Opening Gap Up v1 into a single unified strategy. Rather than maintaining two separate files — one for each direction — the bidirectional version uses conditional logic to detect whichever gap type forms at the session open and enter the appropriate trade. All the core mechanics are preserved: the volatility-adaptive threshold, the gap-fill profit target, and the threshold-based stop loss. What changes is the architecture: one code base, one parameter set, one file to maintain.

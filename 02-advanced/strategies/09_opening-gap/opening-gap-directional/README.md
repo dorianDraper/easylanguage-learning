@@ -1,5 +1,7 @@
 # Opening Gap — Directional Strategies
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 The Opening Gap directional strategies exploit a well-documented market tendency: gaps between the previous session's closing range and the current session's open tend to fill intraday. The system is split into two independent strategies — **Opening Gap Down** (long trades) and **Opening Gap Up** (short trades) — each fading the gap in one direction. Both share the same core mechanics: a volatility-adaptive threshold to filter significant gaps, a gap-size-based profit target targeting full gap fill, and a threshold-based stop loss that invalidates the trade if the gap widens further.

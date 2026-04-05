@@ -1,5 +1,7 @@
 # Key Reversal — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Key Reversal is a mean-reversion strategy that identifies and trades the classic key reversal pattern — a structural low followed by a bullish close that confirms a potential directional change. The strategy enters long on the first confirmed pattern and can add a second position if the trade moves against it while the pattern remains structurally valid. Each entry operates on its own independent time-based exit clock, preventing correlated liquidation between the base and scale-in positions.

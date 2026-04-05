@@ -1,5 +1,7 @@
 # Opening Gap — Estrategias Direccionales
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Las estrategias direccionales de Opening Gap explotan una tendencia bien documentada del mercado: los gaps entre el rango de cierre de la sesión anterior y la apertura de la sesión actual tienden a rellenarse durante el día. El sistema se divide en dos estrategias independientes — **Opening Gap Down** (operaciones largas) y **Opening Gap Up** (operaciones cortas) — cada una fadeando el gap en una dirección. Ambas comparten la misma mecánica central: un umbral adaptativo a la volatilidad para filtrar gaps significativos, un objetivo de beneficio basado en el tamaño del gap que apunta al relleno completo, y un stop de pérdida basado en el umbral que invalida la operación si el gap se amplía.

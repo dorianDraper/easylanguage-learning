@@ -1,5 +1,7 @@
 # Multi-Data Strategy — v3.0 & v4.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 v3 y v4 representan una evolución conceptual de la Multi-Data Strategy, reemplazando la condición de entrada por estado continuo de v1/v2 (`Close > MA`) por un evento discreto de cruce (`Close Crosses Over MA`). Este cambio transforma la naturaleza de la señal de entrada: de *"las condiciones están actualmente alineadas"* a *"la alineación acaba de producirse"*, reduciendo la frecuencia de señales y mejorando su precisión. v4 amplía v3 añadiendo un mecanismo de reentrada que recupera movimientos de continuación perdidos tras una salida técnica, sin necesidad de esperar a un nuevo evento de cruce.

@@ -1,5 +1,7 @@
 # Trend Reentry — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 Trend Reentry is a long-only trend-following strategy that uses a moving average crossover to identify the start of an uptrend and then manages the position through a two-exit, multi-reentry architecture. Rather than holding a single position through an entire move, the strategy takes a tactical profit when price reaches a significant new high, then re-enters if the trend resumes — potentially multiple times within the same uptrend. The final exit is always driven by trend failure, not by a price target, ensuring the strategy stays in strong trends for as long as they last.

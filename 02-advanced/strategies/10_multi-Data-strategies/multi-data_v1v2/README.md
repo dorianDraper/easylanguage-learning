@@ -1,5 +1,7 @@
 # Multi-Data Strategy — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 The Multi-Data Strategy is a trend-following system that combines two data series from the same instrument at different timeframes: a faster **operational timeframe** (Data1) for trade execution, and a slower **higher timeframe** (Data2) for trend context. Entry signals are generated when both timeframes agree in direction, acting as a dual-filter mechanism to improve signal quality. Exits are technically driven, based on price position relative to the operational moving average.

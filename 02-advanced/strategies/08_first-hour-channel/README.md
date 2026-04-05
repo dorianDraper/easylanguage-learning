@@ -1,5 +1,7 @@
 # First Hour Channel — v1.0 & v2.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 First Hour Channel is an intraday breakout strategy that captures the high and low of the market's opening period, then enters on limit orders when price revisits those boundaries after the opening window closes. The strategy operates on the principle that the first hour of trading establishes a volatility envelope representing the market's initial consensus — and that when price breaks beyond those boundaries later in the session, it often signals a momentum move worth trading.

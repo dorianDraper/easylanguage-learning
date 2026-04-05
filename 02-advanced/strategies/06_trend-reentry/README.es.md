@@ -1,5 +1,7 @@
 # Trend Reentry — v1.0 & v2.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Trend Reentry es una estrategia de seguimiento de tendencia solo en largo que utiliza un cruce de medias móviles para identificar el inicio de una tendencia alcista y luego gestiona la posición mediante una arquitectura de dos salidas y múltiples reentradas. En lugar de mantener una única posición a lo largo de todo el movimiento, la estrategia toma un beneficio táctico cuando el precio alcanza un nuevo máximo significativo, y luego reingresa si la tendencia se reanuda — potencialmente múltiples veces dentro de la misma tendencia alcista. La salida final siempre está determinada por el fallo de la tendencia, no por un objetivo de precio, garantizando que la estrategia permanezca en tendencias fuertes todo el tiempo que duren.

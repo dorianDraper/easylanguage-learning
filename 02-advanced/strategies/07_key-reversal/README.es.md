@@ -1,5 +1,7 @@
 # Key Reversal — v1.0 & v2.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Key Reversal es una estrategia de mean-reversion que identifica y opera el clásico patrón de reversión clave — un mínimo estructural seguido de un cierre alcista que confirma un potencial cambio direccional. La estrategia entra en largo en el primer patrón confirmado y puede añadir una segunda posición si la operación se mueve en su contra mientras el patrón sigue siendo estructuralmente válido. Cada entrada opera con su propio reloj de salida temporal independiente, evitando la liquidación simultánea entre la posición base y la posición de scale-in.

@@ -1,5 +1,7 @@
 # Opening Gap Bidireccional — v1.0
 
+🇪🇸 Español | 🇺🇸 [English](README.md)
+
 ## Descripción de la Estrategia
 
 Opening Gap Bidireccional consolida la lógica de Opening Gap Down v2 y Opening Gap Up v1 en una única estrategia unificada. En lugar de mantener dos archivos separados — uno para cada dirección — la versión bidireccional usa lógica condicional para detectar qué tipo de gap se forma en la apertura de la sesión y entrar en la operación correspondiente. Toda la mecánica central se preserva: el umbral adaptativo a la volatilidad, el objetivo de beneficio en el relleno del gap, y el stop de pérdida basado en el umbral. Lo que cambia es la arquitectura: un único código, un único conjunto de parámetros, un único archivo que mantener.

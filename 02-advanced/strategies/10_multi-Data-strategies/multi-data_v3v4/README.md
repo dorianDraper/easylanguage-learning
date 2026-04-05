@@ -1,5 +1,7 @@
 # Multi-Data Strategy — v3.0 & v4.0
 
+🇺🇸 English | 🇪🇸 [Español](README.es.md)
+
 ## Strategy Description
 
 v3 and v4 represent a conceptual evolution of the Multi-Data Strategy, replacing the continuous state entry condition of v1/v2 (`Close > MA`) with a discrete crossover event (`Close Crosses Over MA`). This shift changes the nature of the entry signal from *"conditions are currently aligned"* to *"alignment has just been established"*, reducing signal frequency and improving signal precision. v4 builds on v3 by adding a re-entry mechanism that recovers missed continuation moves after a technical exit, without waiting for a new crossover event.
