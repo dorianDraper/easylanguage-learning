@@ -154,6 +154,66 @@ UpCount:   1      2      0
 
 ---
 
+## Consecutive Highs Detector — Indicador
+
+El Consecutive Highs Detector es un indicador complementario que ejecuta la misma lógica de `UpCount` que la estrategia y visualiza el conteo de racha directamente en el gráfico barra a barra. Sirve como herramienta de monitorización en tiempo real: los traders pueden ver la racha actual construyéndose antes de que alcance el umbral de entrada, y reciben una alerta visual y sonora en el momento exacto en que se activa la señal.
+
+```pascal
+Inputs:
+    Price(High),
+    ConsecutiveBarsUp(3);
+
+Vars:
+    PlotTxt(""),
+    UpCount(0);
+
+If Price > Price[1] Then
+    UpCount = UpCount + 1
+Else
+    UpCount = 0;
+
+If UpCount >= ConsecutiveBarsUp Then
+Begin
+    PlotTxt = "Sell";
+    SetPlotBGColor(1, Darkred);
+    SetPlotColor(1, White);
+    Alert;
+End
+Else
+    PlotTxt = Numtostr(UpCount, 0);
+
+Plot1(PlotTxt, "Sell");
+```
+
+**Cómo se muestra:**
+
+- Mientras una racha se está construyendo pero está por debajo del umbral, cada barra muestra su valor actual de `UpCount` como número (p. ej. `"1"`, `"2"`). Esto proporciona visibilidad en tiempo real de cuán cerca está la racha de activarse.
+- Cuando `UpCount >= ConsecutiveBarsUp`, la barra muestra `"Sell"` con fondo rojo oscuro y texto blanco — una señal visual de alto contraste — y activa la función `Alert` de TradeStation para una notificación sonora.
+- Cuando la racha se resetea, la visualización vuelve a `"0"` en la barra de reseteo e incrementa desde ahí en los máximos consecutivos siguientes.
+
+**Parámetros** (idénticos a los de la estrategia):
+
+| Parámetro | Valor por defecto | Descripción |
+|-----------|-------------------|-------------|
+| `Price` | `High` | Serie de precio usada para detectar barras consecutivas más altas. Debe coincidir con el ajuste de la estrategia. |
+| `ConsecutiveBarsUp` | 3 | Umbral en el que se activan la alerta visual y sonora. Debe coincidir con el ajuste de la estrategia. |
+
+> **Nota de uso:** Mantener `Price` y `ConsecutiveBarsUp` idénticos entre el indicador y la estrategia garantiza que la señal visual se active exactamente en la misma barra que la orden de entrada de la estrategia. Una discrepancia entre ajustes haría que el indicador alertara en una barra diferente a la que realmente entra la estrategia.
+
+**Indicador vs Estrategia — cuándo usar cada uno:**
+
+| | Consecutive Highs Detector | Consecutive Highs Short Fade |
+|---|---|---|
+| Ejecuta operaciones | No | Sí |
+| Muestra conteo de racha | Sí | No |
+| Activa alerta | Sí | No |
+| Útil en backtesting | Sí (revisión visual) | Sí (generación de órdenes) |
+| Útil en trading en vivo | Sí (capa de monitorización) | Sí (capa de ejecución) |
+
+En trading en vivo, ambos deben estar activos simultáneamente: el indicador proporciona el dashboard visual y el aviso temprano a medida que la racha se construye, mientras la estrategia gestiona el envío real de órdenes cuando se alcanza el umbral.
+
+---
+
 ## Psicología del Trading
 
 Consecutive Highs Short Fade codifica una creencia específica sobre el mercado: **una racha de máximos consecutivos más altos representa sobreextensión de momentum a corto plazo, no el inicio de una tendencia sostenida.** Donde una estrategia de seguimiento de tendencia ve tres máximos consecutivos más altos como confirmación de un movimiento que vale la pena unirse, esta estrategia ve el mismo patrón como una oportunidad de fadear — el movimiento ya ha ocurrido y es más probable que pause o revierta que que acelere.

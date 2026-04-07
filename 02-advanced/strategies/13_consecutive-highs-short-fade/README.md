@@ -154,6 +154,66 @@ UpCount: 1      2      0
 
 ---
 
+## Consecutive Highs Detector — Indicator
+
+The Consecutive Highs Detector is a companion indicator that runs the same `UpCount` logic as the strategy and visualizes the streak count directly on the chart bar by bar. It serves as a real-time monitoring tool: traders can see the current streak building before it reaches the entry threshold, and receive an audible and visual alert the moment the signal fires.
+
+```pascal
+Inputs:
+    Price(High),
+    ConsecutiveBarsUp(3);
+
+Vars:
+    PlotTxt(""),
+    UpCount(0);
+
+If Price > Price[1] Then
+    UpCount = UpCount + 1
+Else
+    UpCount = 0;
+
+If UpCount >= ConsecutiveBarsUp Then
+Begin
+    PlotTxt = "Sell";
+    SetPlotBGColor(1, Darkred);
+    SetPlotColor(1, White);
+    Alert;
+End
+Else
+    PlotTxt = Numtostr(UpCount, 0);
+
+Plot1(PlotTxt, "Sell");
+```
+
+**How it displays:**
+
+- While a streak is building but below the threshold, each bar shows its current `UpCount` value as a number (e.g. `"1"`, `"2"`). This gives real-time visibility into how close the streak is to triggering.
+- When `UpCount >= ConsecutiveBarsUp`, the bar displays `"Sell"` with a dark red background and white text — a high-contrast visual signal — and fires TradeStation's `Alert` function for an audible notification.
+- When the streak resets, the display returns to `"0"` on the reset bar and increments from there on subsequent higher highs.
+
+**Parameters** (identical to the strategy):
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `Price` | `High` | Price series used to detect consecutive higher bars. Must match the strategy setting. |
+| `ConsecutiveBarsUp` | 3 | Threshold at which the visual and audible alert fires. Must match the strategy setting. |
+
+> **Usage note:** Keep `Price` and `ConsecutiveBarsUp` identical between the indicator and the strategy to ensure the visual signal fires on exactly the same bar as the strategy's entry order. A mismatch between settings would cause the indicator to alert on a different bar than the strategy actually enters.
+
+**Indicator vs Strategy — when to use each:**
+
+| | Consecutive Highs Detector | Consecutive Highs Short Fade |
+|---|---|---|
+| Executes trades | No | Yes |
+| Shows streak count | Yes | No |
+| Fires alert | Yes | No |
+| Useful in backtesting | Yes (visual review) | Yes (order generation) |
+| Useful in live trading | Yes (monitoring layer) | Yes (execution layer) |
+
+In live trading, both should be active simultaneously: the indicator provides the visual dashboard and early warning as the streak builds, while the strategy handles the actual order submission when the threshold is reached.
+
+---
+
 ## Trade Psychology
 
 Consecutive Highs Short Fade encodes a specific market belief: **a streak of consecutive higher highs represents short-term momentum overextension, not the beginning of a sustained trend.** Where a trend-following strategy sees three consecutive higher highs as confirmation of a move worth joining, this strategy sees the same pattern as an opportunity to fade — the move has already happened and is more likely to pause or reverse than to accelerate.
