@@ -44,7 +44,7 @@ If xRSI > 50 and HighestBar(xRSI, 7) >= 3 Then
 
 **For the long entry:** `LowestBar(xRSI, 7) >= 3` means the lowest RSI reading over the last 7 bars occurred at least 3 bars ago — the RSI has not made a new low in the last 3 bars. Combined with `xRSI < 50`, this means: the RSI is in bearish territory, but its weakest point was several bars ago. The downward impulse has cooled off.
 
-**Concrete example from the code comments:**
+**Concrete example:**
 
 ```
 Bar offset:  6    5    4    3    2    1    0   ← current bar
