@@ -27,7 +27,7 @@ IsNewSession = Date of Next Bar <> Date;
 IsGapDown = Open of Next Bar < GapPrice - GapTest;
 
 // ─────────────────────────────────────────
-// Setup de entrada (short)
+// Setup de entrada (long)
 // ─────────────────────────────────────────
 If IsNewSession and IsGapDown Then
 Begin
