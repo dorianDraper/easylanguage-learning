@@ -1,10 +1,10 @@
-# Opening Gap Bidireccional — v1.0
+# Opening Gap Bidirectional — v1.0
 
 🇺🇸 English | 🇪🇸 [Español](README.es.md)
 
 ## Strategy Description
 
-Opening Gap Bidireccional consolidates the logic of Opening Gap Down v2 and Opening Gap Up v1 into a single unified strategy. Rather than maintaining two separate files — one for each direction — the bidirectional version uses conditional logic to detect whichever gap type forms at the session open and enter the appropriate trade. All the core mechanics are preserved: the volatility-adaptive threshold, the gap-fill profit target, and the threshold-based stop loss. What changes is the architecture: one code base, one parameter set, one file to maintain.
+Opening Gap Bidirectional consolidates the logic of Opening Gap Down v2 and Opening Gap Up v1 into a single unified strategy. Rather than maintaining two separate files — one for each direction — the bidirectional version uses conditional logic to detect whichever gap type forms at the session open and enter the appropriate trade. All the core mechanics are preserved: the volatility-adaptive threshold, the gap-fill profit target, and the threshold-based stop loss. What changes is the architecture: one code base, one parameter set, one file to maintain.
 
 The strategy takes at most one trade per session, in whichever direction the gap occurs. If both a gap up and a gap down were theoretically present (which cannot happen simultaneously), the first condition evaluated would win — in practice, this is never an issue since price cannot open both above the prior high and below the prior low.
 
@@ -76,9 +76,9 @@ The exit logic is structurally identical to the directional strategies. `GapExit
 
 ---
 
-## Bidireccional vs Directional — Architecture Comparison
+## Bidirectional vs Directional — Architecture Comparison
 
-| | Gap Down v2 | Gap Up v1 | Bidireccional v1 |
+| | Gap Down v2 | Gap Up v1 | Bidirectional v1 |
 |---|---|---|---|
 | **Directions traded** | Long only | Short only | Both |
 | **`GapPrice` configurable** | ✓ (`Low` default) | ✓ (`High` default) | — (hardcoded `Low` / `High`) |
@@ -160,9 +160,9 @@ The one-trade-per-session constraint enforces discipline: once the session's gap
 
 ---
 
-## When to Use Bidireccional vs Directional Strategies
+## When to Use Bidirectional vs Directional Strategies
 
-**Use Bidireccional when:**
+**Use Bidirectional when:**
 - You want symmetric exposure to gap-fade in both directions from a single file.
 - You prefer a simpler parameter surface (one input vs two).
 - You are comfortable with `Low` and `High` as fixed reference prices.
