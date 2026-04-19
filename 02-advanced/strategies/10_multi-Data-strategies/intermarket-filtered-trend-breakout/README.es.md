@@ -342,3 +342,11 @@ La salida por régimen es el reconocimiento de la estrategia de que ninguna tend
 **Validación walk-forward:** Dado el número de parámetros configurables, se recomienda encarecidamente el testing walk-forward frente a la optimización simple dentro de la muestra. Los parámetros más sensibles al overfitting son `ChannelLength`, `FastMALength` y `SlowMALength` sobre Data1. `FilterMALength` debe probarse para robustez a través de un rango de valores en lugar de optimizarse a un único punto.
 
 **Rol en el portfolio:** Como estrategia de seguimiento de tendencia multi-data, este componente es más útil en un portfolio junto a estrategias de reversión a la media (que funcionan mejor en condiciones de rango sin tendencia). La capa de filtro intermercado significa que generará menos señales que una estrategia pura de ruptura de tendencia — menor frecuencia, pero entradas de mayor convicción.
+
+**Flujo de trabajo de testing recomendado:** Antes de optimizar parámetros, aísla la contribución de cada filtro ejecutando la estrategia en cuatro configuraciones:
+
+1. Comienza con `CurrencyCorrelation = 0` y `BondCorrelation = 0` para establecer la línea base pura de tendencia-ruptura sin ningún filtro intermercado. 
+2. Luego habilita cada filtro de forma independiente — `CurrencyCorrelation = -1, BondCorrelation = 0` y `CurrencyCorrelation = 0, BondCorrelation = -1` — comparando cada uno con la línea base para cuantificar el valor incremental de cada mercado secundario. 
+3. Finalmente, ejecuta la configuración completa `CurrencyCorrelation = -1, BondCorrelation = -1` y compara con los tres resultados anteriores. 
+
+Este enfoque escalonado revela si cada filtro mejora genuinamente el rendimiento ajustado al riesgo o simplemente reduce la frecuencia de operaciones sin una mejora de calidad correspondiente.

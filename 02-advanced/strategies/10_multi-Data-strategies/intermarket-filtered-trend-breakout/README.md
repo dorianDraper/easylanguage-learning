@@ -362,3 +362,11 @@ The regime exit is the strategy's acknowledgment that no trend lasts forever in 
 **Walk-forward validation:** Given the number of configurable parameters, walk-forward testing is strongly recommended over simple in-sample optimization. The parameters most sensitive to overfitting are `ChannelLength`, `FastMALength`, and `SlowMALength` on Data1. `FilterMALength` should be tested for robustness across a range of values rather than optimized to a single point.
 
 **Portfolio role:** As a trend-following multi-data strategy, this component is most useful in a portfolio alongside mean-reversion strategies (which perform best in non-trending, range-bound conditions). The intermarket filter layer means it will generate fewer signals than a pure trend-breakout strategy — lower frequency, but higher-conviction entries.
+
+**Recommended testing workflow:** Before optimizing parameters, isolate the contribution of each filter by running the strategy in four configurations: 
+
+1. Start with `CurrencyCorrelation = 0` and `BondCorrelation = 0` to establish the pure trend-breakout baseline with no intermarket filtering. 
+2. Then enable each filter independently — `CurrencyCorrelation = -1, BondCorrelation = 0` and `CurrencyCorrelation = 0, BondCorrelation = -1` — comparing each against the baseline to quantify the incremental value of each secondary market. 
+3. Finally, run the full configuration `CurrencyCorrelation = -1, BondCorrelation = -1` and compare against all three prior results. 
+
+This stepwise approach reveals whether each filter genuinely improves risk-adjusted performance or merely reduces trade frequency without a corresponding quality improvement.
