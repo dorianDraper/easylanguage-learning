@@ -6,7 +6,7 @@
 
 ---
 
-## 1. La tesis intermercado
+## 1. La tesis intermercado  
 
 Los mercados financieros no se mueven de forma aislada. Los índices de renta variable, las divisas y los bonos son todos expresiones de las mismas fuerzas macroeconómicas subyacentes — expectativas de crecimiento, inflación, apetito por el riesgo y flujos de capital. Cuando estas fuerzas cambian, lo hacen en todos los mercados simultáneamente, aunque no siempre a la misma velocidad ni con la misma magnitud.
 
